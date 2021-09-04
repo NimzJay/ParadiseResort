@@ -1,0 +1,20 @@
+/* Basic Color Palette */
+.bg-blue{
+    background-color: #2b2d42;
+}
+
+.bg-orange{
+    background-color: #e26852;
+}
+
+.bg-grey{
+    background-color: #a7a0a2;
+}
+
+.bg-green{
+    background-color: #36abab;
+}
+
+body{
+    font-family: 'Calibri Light';
+}
