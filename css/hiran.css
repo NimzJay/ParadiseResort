@@ -1,0 +1,13 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+#card{
+    background-color: rgb(218, 218, 218);
+    box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+}
+
+#card:hover{
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2), 10px 10px 10px 0 rgba(0, 0, 0, 0.19);
+}
