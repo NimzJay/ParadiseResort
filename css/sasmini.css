@@ -1,10 +1,19 @@
-label {
-    color:azure;
-    font-family: 'Times New Roman', Times, serif;
+ h2{
+     text-align: center;
+ }
+ body{
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(../img/room1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} 
+#card{
+    background-color: rgba(209, 209, 209, 0.85);
+    box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
 }
-h1{
-    font-family: 'Times New Roman', Times, serif;
-    color: #a7a0a2;
-    text-align: center;
+
+#card:hover{
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2), 10px 10px 10px 0 rgba(0, 0, 0, 0.19);
 }
- 
