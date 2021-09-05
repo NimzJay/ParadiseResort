@@ -3,11 +3,17 @@
  }
  body{
     font-family: 'Open Sans', sans-serif;
+    /* background-image: url(../img/room1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+} 
+.bg-booking{
     background-image: url(../img/room1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-} 
+}
 #card{
     background-color: rgba(209, 209, 209, 0.85);
     box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, 0.2), 25px 25px 25px 0 rgba(0, 0, 0, 0.19);
@@ -17,3 +23,27 @@
 #card:hover{
     box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2), 10px 10px 10px 0 rgba(0, 0, 0, 0.19);
 }
+.bg-rooms{
+    background-image: url(../img/ViewRoomsBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    
+}
+.card-title{
+    font-family: 'Open Sans', sans-serif;
+}
+.card-text{
+    font-family: 'Open Sans', sans-serif;
+}
+.bg-halls{
+    background-image: url(../img/ViewHallsBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    
+}
+ 
+ 
