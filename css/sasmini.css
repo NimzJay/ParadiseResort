@@ -9,7 +9,7 @@
     background-attachment: fixed; */
 } 
 .bg-booking{
-    background-image: url(../img/room1.jpg);
+    background-image: url(../img/NewRoomBackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -44,6 +44,9 @@
     background-attachment: fixed;
     backdrop-filter: blur(5px);
     
+}
+.bg-gallery{
+    background-color:#F8F8FF;
 }
  
  
