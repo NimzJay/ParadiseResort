@@ -1,0 +1,85 @@
+.first .carousel .carousel-inner .carousel-item img{
+  height: 100vh;
+  min-height: 500px;
+  /* background-size: cover; */
+  object-fit: cover;
+  /* background-image: url("../img/hotel.jpg"); */
+  background-position: top center;
+}
+
+.affix {
+  /* background: rgb(255,123,99);
+    background: -moz-linear-gradient(90deg, rgba(255,148,197,1) 0%, rgba(255,123,99,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,148,197,1) 0%, rgba(255,123,99,1) 100%);
+    background: linear-gradient(90deg, rgba(255,148,197,1) 0%, rgba(255,123,99,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff94c5",endColorstr="#ff7b63",GradientType=1); */
+
+    background: rgb(34,198,198);
+    background: -moz-linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    background: linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c6c6",endColorstr="#9666ff",GradientType=1);
+
+  -webkit-transition: padding 0.2s ease-out;
+  -moz-transition: padding 0.2s ease-out;
+  -o-transition: padding 0.2s ease-out;
+  transition: padding 0.2s ease-out;
+}
+
+@media (min-width: 768px) {
+  .affix-top {
+    /* navbar style at top */
+    background-color: transparent;
+    border-color: transparent;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
+
+nav .navbar-nav .nav-link,
+nav .navbar-brand {
+  color: white;
+  display: inline;
+}
+
+nav .navbar-nav .nav-item.active{
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  border-bottom: 5px solid #ff7b63;
+} 
+
+nav .navbar-nav .nav-item{
+  font-size: 18px;
+  padding-top: 23px; 
+  padding-bottom: 22px; 
+}
+
+nav .navbar-nav .nav-item:hover{
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  border-bottom: 5px solid #ff7b63;  
+}
+
+.navbar {
+  height: 75px;
+  background-color: rgba(92, 92, 92, 0.9);
+  /* background: rgba(34,198,198,0.75);
+    background: -moz-linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    background: linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c6c6",endColorstr="#9666ff",GradientType=1); */
+}
+
+.navbar2 {
+  height: 75px;
+  background: rgba(34,198,198,0.75);
+    background: -moz-linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    background: linear-gradient(90deg, rgba(34,198,198,1) 0%, rgba(150,102,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c6c6",endColorstr="#9666ff",GradientType=1);
+}
+
+section.first {
+  height: calc(90% - 50px);
+  height: 90vh;
+}
