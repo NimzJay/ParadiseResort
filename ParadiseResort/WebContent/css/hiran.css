@@ -14,7 +14,7 @@ body{
 }
 
 .bg-hallbooking{
-    background-image: url(/img/ViewHallsBackground.jpg);
+    background-image: url("../img/ViewHallsBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
