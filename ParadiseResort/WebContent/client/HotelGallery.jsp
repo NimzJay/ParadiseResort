@@ -86,7 +86,7 @@
 <div class="row">
   <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
     <img
-      src="../img/Room1.jpg"
+      src="../img/HotelRoom1.jpg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt=""
     />
