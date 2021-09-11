@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="/css/dash.css">
+    <link rel="stylesheet" href="../css/dash.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
@@ -21,45 +21,37 @@
             <div class="col-md-12 col-xs-12 col-sm-12">
                 <div class="row">
                     <div class="col-md-2 col-xs-12 col-sm-12">
-                        <section>
-                            <div class="wrapper">
-                                <div class="sidebar">
-                                    <div class="profile">
-                                        <img src="/sas.png"
+                        <div class="d-flex flex-column flex-shrink-0 p-3 text-white side"
+							style="width: 280px; height: 100vh;">
+							<center><h2>Paradise Resort</h2></center>
+							<hr>
+							<ul class="nav nav-pills flex-column mb-auto">
+								<li class="nav-item">
+								<a href="#" class="nav-link active" aria-current="page">
+									<span class="icon"><i class="fas fa-home me-4"></i></span> 
+									<span class="item">Home</span></a>
+								</li>
+								<li><a href="#" class="nav-link text-white"> 
+									<span class="icon"><i class="fas fa-desktop me-4"></i></span>
+                                    <span class="item">Customer List View</span>
+								</a></li>
+								<li><a href="#" class="nav-link text-white"> 
+									<span class="icon"><i class="fas fa-user-friends me-4"></i></span>
+                                    <span class="item">Add New Customer</span>
+								</a></li>
+								<li><a href="#" class="nav-link text-white"> 
+									<span class="icon"><i class="fas fa-sign-out-alt me-4"></i></span>
+                                    <span class="item">Log-out</span>
+								</a></li>
+							</ul>
+							<hr>
+							<div class="profile">
+                                        <img src="../img/User01.png"
                                             alt="profile_picture">
                                         <h3>Anamika Roy</h3>
                                         <p>Designer</p>
                                     </div>
-                                    <ul>
-                                        <li>
-                                            <a href="#" class="active">
-                                                <span class="icon"><i class="fas fa-home"></i></span>
-                                                <span class="item">Home</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cuslistviw.html">
-                                                <span class="icon"><i class="fas fa-desktop"></i></span>
-                                                <span class="item">Customer List View</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="icon"><i class="fas fa-user-friends"></i></span>
-                                                <span class="item">Add New Customer</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                                                <span class="item">Log-out</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </section>
+						</div>
                     </div>
                     <div class="col-md-10">
                         <div class="row">
