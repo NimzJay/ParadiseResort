@@ -1,6 +1,6 @@
 package servlets;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.time.format.DateTimeFormatter;
 import java.sql.Connection;
 import java.sql.Date;  
@@ -59,12 +59,13 @@ public class HallBooking extends HttpServlet {
 				 price = 700000;
 			}
 			Connection con = DBConn.getconn();
-			String sql = "INSERT INTO `booking`(`firstname`, `secondname`, `email`, `tel`, `checkin`, `checkout`, `guests`, `type`, `price`) VALUES ('" + fname + "','" + lname + "','" + email + "','" + tel + "','" + stdate + "','" + ldate + "','" + numofg + "','" + hall + "','" + price + "')";
-			
+			String sql = "INSERT INTO booking(firstname, secondname, email, tel, checkin, checkout, guests, type, price) VALUES ('" + fname + "','" + lname + "','" + email + "','" + tel + "','" + stdate + "','" + ldate + "','" + numofg + "','" + hall + "','" + price + "')";
+
 			java.sql.PreparedStatement st = con.prepareStatement(sql);
 			st.executeUpdate(sql);
-			System.out.println("Hiran!");
-			//request.getRequestDispatcher("InviteeView.jsp").forward(request, response);
+			System.out.println("Hall Booked Successfully");
+//			request.getRequestDispatcher("../client/UserProfileBookingStatusPage.jsp").forward(request, response);
+			con.close();
 			
 		}catch (Exception e) {
 			// TODO: handle exception
