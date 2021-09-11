@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/dbCon")
-public class dbCon extends HttpServlet {
+public class DBConn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public dbCon() {
+	public DBConn() {
 		super();
 	}
 

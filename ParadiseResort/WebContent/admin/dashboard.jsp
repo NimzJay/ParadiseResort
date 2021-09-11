@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-2 col-xs-12 col-sm-12">
                         <div class="d-flex flex-column flex-shrink-0 p-3 text-white side"
-							style="width: 280px; height: 100vh;">
+							style="width: auto; height: 100vh;">
 							<center><h2>Paradise Resort</h2></center>
 							<hr>
 							<ul class="nav nav-pills flex-column mb-auto">
