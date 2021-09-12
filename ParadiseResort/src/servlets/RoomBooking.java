@@ -56,15 +56,15 @@ public class RoomBooking extends HttpServlet {
 			Date ldate=Date.valueOf(request.getParameter("edate"));
 			int numofg = Integer.parseInt(request.getParameter("numofg"));
 			String room = request.getParameter("rad");
-			if(room.equals("Room 1")) {
+			if(room.equals("classic")) {
 				  price = 20000;
-			}else if(room.equals("Room 2")){
+			}else if(room.equals("suite")){
 				  price = 25000;
-			}else if(room.equals("Room 3")){
+			}else if(room.equals("family")){
 				 price = 30000;
-			}else if(room.equals("Room 4")) {
+			}else if(room.equals("deluxe")) {
 				price = 50000;	
-			}else if(room.equals("Room 5")) {
+			}else if(room.equals("superior")) {
 				price = 70000;
 			}else {
 				price = 100000;

@@ -70,32 +70,32 @@
               <label><b>Select Your Room</b></label>
               <br>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="rad" value="Room 1" id="Radio1"> 
+                <input class="form-check-input" type="radio" name="rad" value="classic" id="Radio1"> 
                 <label class="form-check-label" for="flexRadioDefault1"> Classic Room - Rs. 20,000/= </label>
               </div>
               
                <div class="form-check">
-                <input class="form-check-input" type="radio" name="rad" value="Room 2" id="Radio2"> 
+                <input class="form-check-input" type="radio" name="rad" value="suite" id="Radio2"> 
                 <label class="form-check-label" for="flexRadioDefault1"> Suite Room - Rs. 25,000/= </label>
               </div>
               
                <div class="form-check">
-                <input class="form-check-input" type="radio" name="rad" value="Room 3" id="Radio3"> 
+                <input class="form-check-input" type="radio" name="rad" value="family" id="Radio3"> 
                 <label class="form-check-label" for="flexRadioDefault1"> Family Room - Rs. 30,000/= </label>
               </div>
               
                <div class="form-check">
-                <input class="form-check-input" type="radio" name="rad" value="Room 4" id="Radio4"> 
+                <input class="form-check-input" type="radio" name="rad" value="deluxe" id="Radio4"> 
                 <label class="form-check-label" for="flexRadioDefault1"> Deluxe Room - Rs. 50,000/= </label>
               </div>
               
                <div class="form-check">
-                <input class="form-check-input" type="radio" name="rad" value="Room 5" id="Radio5"> 
+                <input class="form-check-input" type="radio" name="rad" value="superior" id="Radio5"> 
                 <label class="form-check-label" for="flexRadioDefault1"> Superior Room - Rs: 70,000/= </label>
               </div>
               
                <div class="form-check">
-                <input class="form-check-input" type="radio" name="rad" value="Room 6" id="Radio6"> 
+                <input class="form-check-input" type="radio" name="rad" value="luxury" id="Radio6"> 
                 <label class="form-check-label" for="flexRadioDefault1"> Luxury Room - Rs. 100,000/= </label>
               </div>
 
