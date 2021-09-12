@@ -4,17 +4,31 @@ body{
      font-family: "Calibri Light";
 }
 h2{
+	padding-top:15px;
+	margin:auto;
 	color:#fff;
 }
-
 hr{
 	color:#fff;
+	height: 10px;
+    width: 100%;
 }
+#logo{
+	
+	display: block;
+    width: 200px;
+    height: 215px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
 .profile{
-    margin-bottom: 30px;
+	margin:auto;
     text-align: center;
 }
+
 .profile img{
+	
     display: block;
     width: 100px;
     height: 100px;
@@ -23,6 +37,7 @@ hr{
 }
 
 .profile h3{
+	text-align:center;
     color: #ffffff;
     margin: 10px 0 5px;
 }
@@ -31,14 +46,16 @@ hr{
     color:#fff;
     font-size: 14px;
 }
-.item:hover{
+.item,.icon{
 	color:#fff;
 }
+
 .side{
-	margin: 10px 0px;
+	height: 100%;
+	margin: 5px 5px;
 	border-radius: 10px;
 	z-index: -1;
-	background-color: #2B2D42;
+	background-color: #404040;
 	overflow: hidden;
 	box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2), 10px 10px 10px 0 rgba(0, 0, 0, 0.19);
 }
@@ -74,6 +91,7 @@ li:hover{
     text-align: center;
 }
 .income {
+	overflow: hidden;
     background-color: #36abab;
     height: 800px;
     color: #fff;
@@ -103,6 +121,7 @@ li:hover{
     padding: 50px 20px;
 }
  table{
+ 	 overflow: hidden;
      width: 100%;
  }
 
@@ -113,5 +132,16 @@ li:hover{
      padding-top: 10px;
      padding-bottom: 10px;
  }
-
- 
+table td{
+     color: #fff;
+     font-weight:bold;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
+ .booking{
+ 	 text-align:center;
+ 	 color: #000000;
+     font-weight:bold;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
