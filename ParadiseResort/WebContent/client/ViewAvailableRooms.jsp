@@ -11,7 +11,7 @@
 <%@page import="dbConnection.DBConn"%>
 
 <%
-	Statement st = null;
+	Statement st1,st2,st3,st4,st5,st6 = null;
 	ResultSet rs1,rs2,rs3,rs4,rs5,rs6 = null;
 %>
 
@@ -37,19 +37,26 @@
 			int i = 0;
 
 			Connection con = DBConn.getconn();
-			st = con.createStatement();
+			st1 = con.createStatement();
+			st2 = con.createStatement();
+			st3 = con.createStatement();
+			st4 = con.createStatement();
+			st5 = con.createStatement();
+			st6 = con.createStatement();
+			
 			String sql1 = ("SELECT COUNT(rid) AS count FROM room WHERE roomType='classic' AND availability='Yes'");
 			String sql2 = ("SELECT COUNT(rid) AS count FROM room WHERE roomType='suite' AND availability='Yes'");
 			String sql3 = ("SELECT COUNT(rid) AS count FROM room WHERE roomType='family' AND availability='Yes'");
 			String sql4 = ("SELECT COUNT(rid) AS count FROM room WHERE roomType='deluxe' AND availability='Yes'");
 			String sql5 = ("SELECT COUNT(rid) AS count FROM room WHERE roomType='superior' AND availability='Yes'");
 			String sql6 = ("SELECT COUNT(rid) AS count FROM room WHERE roomType='luxuxry' AND availability='Yes'");
-			rs1 = st.executeQuery(sql1);
-			rs2 = st.executeQuery(sql2);
-			rs3 = st.executeQuery(sql3);
-			rs4 = st.executeQuery(sql4);
-			rs5 = st.executeQuery(sql5);
-			rs6 = st.executeQuery(sql6);
+			
+			rs1 = st1.executeQuery(sql1);
+			rs2 = st2.executeQuery(sql2);
+			rs3 = st3.executeQuery(sql3);
+			rs4 = st4.executeQuery(sql4);
+			rs5 = st5.executeQuery(sql5);
+			rs6 = st6.executeQuery(sql6);
 	%>
 
 	<br>

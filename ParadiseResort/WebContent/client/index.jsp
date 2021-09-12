@@ -49,7 +49,9 @@
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="HotelGallery.jsp">Gallery</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
-					class="nav-link w-100" href="#">Book Now</a></li>
+					class="nav-link w-100" href="ViewAvailableRooms.jsp">Book Rooms</a></li>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="ViewAvailableHalls.jsp">Book Halls</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
 			</ul>
