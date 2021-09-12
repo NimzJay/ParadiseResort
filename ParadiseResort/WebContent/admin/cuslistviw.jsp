@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,119 +19,77 @@
 </head>
 <body>
 	<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fas fa-home me-4 item"></i> <span class="ms-1 d-none d-sm-inline item">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
-                </ul>
-                <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col py-3">
-            <div class="row">
-									<div class="col-md-12">
-										<div class="card">
-											<div class="view_table">
-												<h1>
-													<b>Customer List</b>
-												</h1>
-												<p>
-													All Customers are Listed Here. You can perform <b>Edit</b>
-													or <b>Delete</b>.
-												</p>
-												<table>
-													<tr>
-														<th>First Name</th>
-														<th>Second Name</th>
-														<th>Email</th>
-														<th>Contact Number</th>
-														<th>Rooms Booked</th>
-														<th>Payemnt</th>
-														<th>Edit</th>
-														<th>Delete</th>
-													</tr>
-												</table>
-											</div>
-										</div>
-									</div>
+		<div class="row ">
+			<div class="col-auto col-md-3 col-xl-2 px-sm-2 ">
+				<div
+					class="d-flex flex-column align-items-center align-items-sm-start px-3  pt-2 min-vh-100 side">
 
-								</div>
+					<img id="logo" src="../img/logo.png"/>
+
+					<hr>
+					<hr>
+					<ul
+						class="nav nav-pills flex-column mb-sm-auto  align-items-center align-items-sm-start"
+						id="menu">
+						<li class="nav-item">
+							<a href="./dashboard.jsp" class="nav-link " aria-current="page"> 
+								<span class="icon"><i class="fas fa-home me-2"></i></span> 
+								<span class="ms-1 d-none d-sm-inline item">Home</span>
+							</a>
+						</li>
+						<li><a href="#" class="nav-link active"> <span
+								class="icon"><i class="fas fa-desktop me-2"></i></span> <span
+								class="ms-1 d-none d-sm-inline item">Customer List View</span>
+						</a></li>
+						<li><a href="#" class="nav-link text-white"> <span
+								class="icon"><i class="fas fa-user-friends me-2"></i></span> <span
+								class="ms-1 d-none d-sm-inline item">Add New Customer</span>
+						</a></li>
+						<li><a href="#" class="nav-link text-white"> <span
+								class="icon"><i class="fas fa-sign-out-alt me-2"></i></span> <span
+								class="ms-1 d-none d-sm-inline item">Log-out</span>
+						</a></li>
+					</ul>
+					<hr>
+					<div class="profile" style="width: 100%">
+						<img src="../img/User01.png" alt="profile_picture">
+						<h3>Anamika Roy</h3>
+						<p>Designer</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="col py-3">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="view_table">
+								<h1>
+									<b>Customer List</b>
+								</h1>
+								<p>
+									All Customers are Listed Here. You can perform <b>Edit</b> or <b>Delete</b>.
+								</p>
+								<table>
+									<tr>
+										<th>First Name</th>
+										<th>Second Name</th>
+										<th>Email</th>
+										<th>Contact Number</th>
+										<th>Rooms Booked</th>
+										<th>Payemnt</th>
+										<th>Edit</th>
+										<th>Delete</th>
+									</tr>
+								</table>
 							</div>
-        </div>
-    </div>
-</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
