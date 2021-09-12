@@ -31,7 +31,7 @@
             <img src="../img/SuiteRoom.jpg"class="card-img-top" alt="..."/>
             <div class="card-body">
               <h3 class="card-title">Suite Room</h3>
-              <p><span class="price"><b>$120.00</b></span> <span class="per"><i>per night</i></span></p><hr>
+              <p><span class="price"><b>Rs. 25,000/= </b></span> <span class="per"><i>per night</i></span></p><hr>
               <p class="card-text">
                 <span>Max:</span> 3 Persons <br>
                 <span>Size:</span> 55 m2<br>
@@ -50,7 +50,7 @@
             <img src="../img/FamilyRoom.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
                 <h3 class="card-title">Family Room</h3>
-                <p><span class="price"><b>$150.00</b></span> <span class="per"><i>per night</i></span></p><hr>
+                <p><span class="price"><b>Rs. 30,000/= </b></span> <span class="per"><i>per night</i></span></p><hr>
                 <p class="card-text">
                   <span>Max:</span> 3 Persons <br>
                   <span>Size:</span> 50 m2<br>
@@ -69,7 +69,7 @@
             <img src="../img/DeluxeRoom.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
                 <h3 class="card-title">Deluxe Room</h3>
-                <p><span class="price"><b>$250.00</b></span> <span class="per"><i>per night</i></span></p><hr>
+                <p><span class="price"><b>Rs. 50,000/= </b></span> <span class="per"><i>per night</i></span></p><hr>
                 <p class="card-text">
                   <span>Max:</span> 2 Persons <br>
                   <span>Size:</span> 100 m2<br>
@@ -100,7 +100,7 @@
               <img src="../img/ClassicRoom.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">Classic Room</h3>
-              <p><span class="price"><b>$130.00</b></span> <span class="per"><i>per night</i></span></p><hr>
+              <p><span class="price"><b>Rs. 20,000</b></span> <span class="per"><i>per night</i></span></p><hr>
               <p class="card-text">
                 <span>Max:</span> 2 Persons <br>
                 <span>Size:</span> 55 m2<br>
@@ -119,7 +119,7 @@
               <img src="../img/SuperiorRoom.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">Superior Room</h3>
-              <p><span class="price"><b>$350.00</b></span> <span class="per"><i>per night</i></span></p><hr>
+              <p><span class="price"><b>Rs. 70,000/= </b></span> <span class="per"><i>per night</i></span></p><hr>
               <p class="card-text">
                 <span>Max:</span> 2 Persons <br>
                 <span>Size:</span> 65 m2<br>
@@ -138,7 +138,7 @@
               <img src="../img/LuxuryRoom.jpg" class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h3 class="card-title">Luxury Room</h3>
-                <p><span class="price"><b>$500.00</b></span> <span class="per"><i>per night</i></span></p><hr>
+                <p><span class="price"><b>Rs. 100,000/= </b></span> <span class="per"><i>per night</i></span></p><hr>
                 <p class="card-text">
                   <span>Max:</span> 2 Persons <br>
                   <span>Size:</span> 75 m2<br>
