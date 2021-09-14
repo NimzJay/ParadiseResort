@@ -7,14 +7,13 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link rel="stylesheet" href="../other/bootstrap.min.css" /> -->
+<link rel="icon" type="image/png" href="../img/favicon.png">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
 	crossorigin="anonymous">
 <script src="../other/jquery-3.6.0.min.js"></script>
-<!-- <script src="../other/js/bootstrap.min.js"></script> -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
@@ -34,7 +33,8 @@
 	<nav id="nav" class="navbar affix fixed-top navbar-expand-sm"
 		data-spy="affix">
 	<div class="container h-100">
-		<a href="#" class="navbar-brand">Paradise Resort</a>
+		<a href="index.jsp" class="navbar-brand w-25"><img src="../img/brand.png" width="60%" height="60%"
+				class="" alt="LOGO"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
 			id="navbarNav">
 			<ul class="navbar-nav h-100 align-items-center">
 				<li class="nav-item px-lg-4 px-md-3"><a
-					class="nav-link w-100 active" aria-current="page" href="index.jsp">Home</a>
+					class="nav-link w-100" aria-current="page" href="index.jsp">Home</a>
 				</li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="HotelGallery.jsp">Gallery</a></li>
@@ -191,7 +191,7 @@
 		</div>
 		<div class="text-center p-3"
 			style="background-color: rgba(0, 0, 0, 0.3);">
-			© 2020 Copyright: <a class="text-white"
+			© 2021 Copyright: <a class="text-white"
 				href="https://mdbootstrap.com/" style="text-decoration: none;">Team
 				Alpha</a>
 		</div>

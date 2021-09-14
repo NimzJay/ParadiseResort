@@ -3,14 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<title>Title</title>
+<title>New Hall Booking | Paradise Resort</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+<link rel="icon" type="image/png" href="../img/favicon.png">
 <link rel="stylesheet" href="../css/hiran.css">
+<link rel="stylesheet" href="../css/navbar.css" />
+<script src="../js/navbar2.js"></script>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -20,7 +22,42 @@
 	crossorigin="anonymous">
 </head>
 <body class="bg-hallbooking">
+
 	<div class="container-fluid">
+		<div class="row mb-5">
+			<nav id="nav" class="navbar affix fixed-top navbar-expand-sm"
+				data-spy="affix">
+			<div class="container h-100">
+				<a href="index.jsp" class="navbar-brand w-25"><img
+					src="../img/brand.png" width="60%" height="60%" class="" alt="LOGO"></a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="d-flex collapse navbar-collapse justify-content-end h-100"
+					id="navbarNav">
+					<ul class="navbar-nav h-100 align-items-center">
+						<li class="nav-item px-lg-4 px-md-3"><a
+							class="nav-link w-100 active" aria-current="page"
+							href="index.jsp">Home</a></li>
+						<li class="nav-item px-lg-4 px-md-3 px-2"><a
+							class="nav-link w-100" href="HotelGallery.jsp">Gallery</a></li>
+						<li class="nav-item px-lg-4 px-md-3 px-2"><a
+							class="nav-link w-100" href="ViewAvailableRooms.jsp">Book
+								Rooms</a></li>
+						<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
+							class="nav-link w-100" href="ViewAvailableHalls.jsp">Book
+								Halls</a></li>
+						<li class="nav-item px-lg-4 px-md-3 px-2"><a
+							class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+					</ul>
+				</div>
+			</div>
+			</nav>
+		</div>
 		<div class="row">
 			<div class="col-6 mx-auto my-5" id="card">
 				<form class="container-fluid" action="../HallBooking" method="POST">
@@ -129,7 +166,82 @@
 		</div>
 	</div>
 
+	<!-- Footer -->
+	<div class="bg-blue text-white text-md-start">
+		<!-- Grid container -->
+		<div class="container p-4">
+			<!--Grid row-->
+			<div class="row mt-5">
+				<!--Grid column-->
+				<div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+					<h5 class="text-uppercase h4 pb-3" style="color: #22c6c6;">
+						<b>About Us</b>
+					</h5>
+					<p style="text-align: left;">The Paradise Resort overlooks the
+						alluring waves of the Indian Ocean. Explore the tropical beauty
+						and rich marine life of this peaceful, eco-conscious setting. Our
+						private lagoon, Iridium Spa and outdoor infinity pool promise
+						nonpareil relaxation.</p>
+					<div class="hr mt-5"></div>
 
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center">
+					<h5 class="text-uppercase mb-0 pb-3" style="color: #22c6c6;">
+						<b>Overview</b>
+					</h5>
+					<ul class="list-unstyled">
+						<li><a href="index.jsp" class="text-white links">Home</a></li>
+						<li><a href="HotelGallery.jsp" class="text-white links">Gallery</a></li>
+						<li><a href="#!" class="text-white links">Book Now</a></li>
+						<li><a href="Signin.jsp" class="text-white links">Sign in</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center"
+					style="border-left: 2px solid #ff7b63;">
+
+					<h5 class="text-uppercase mb-0 pb-3" style="color: #22c6c6;">
+						<b>Booking</b>
+					</h5>
+
+					<ul class="list-unstyled">
+						<li><a href="#!" class="text-white links">Events & Dining</a></li>
+						<li><a href="#!" class="text-white links">Experience</a></li>
+						<li><a href="ViewAvailableRooms.jsp" class="text-white links">View
+								Available Rooms</a></li>
+						<li><a href="ViewAvailableHalls.jsp" class="text-white links">View
+								Available Halls</a></li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- Section: Social media -->
+			<center>
+				<section class="mb-4 mt-4"> <!-- Facebook --> <a
+					id="social" class="btn btn-transparent btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-facebook-f text-white h5"></i></a> <!-- Twitter -->
+				<a id="social" class="btn btn-transparent btn-floating m-1"
+					href="#!" role="button"><i class="fab fa-twitter text-white h5"></i></a>
+				<!-- Google --> <a id="social"
+					class="btn btn-transparent btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-google text-white h5"></i></a> <!-- Instagram -->
+				<a id="social" class="btn btn-transparent btn-floating m-1"
+					href="#!" role="button"><i
+					class="fab fa-instagram text-white h5"></i></a> <!-- Linkedin --> <a
+					id="social" class="btn btn-transparent btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-linkedin-in text-white h5"></i></a>
+
+				</section>
+			</center>
+			<!-- Section: Social media -->
+		</div>
+		<div class="text-center p-3"
+			style="background-color: rgba(0, 0, 0, 0.3);">
+			© 2021 Copyright: <a class="text-white"
+				href="https://mdbootstrap.com/" style="text-decoration: none;">Team
+				Alpha</a>
+		</div>
+
+	</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
