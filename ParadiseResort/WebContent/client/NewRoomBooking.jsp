@@ -61,89 +61,114 @@
 					<b>New Room Booking</b>
 				</h2>
 				<br>
-				<form class="container-fluid" action="../RoomBooking" method="POST">
+				<form class="container-fluid row g-3 needs-validation" action="../RoomBooking" method="POST" novalidate>
 					<div class="container">
 
-						<h4 style="font-family: 'Calibri Light';">Please fill the
-							following details!</h4>
+						<h4 style="font-family: 'Calibri Light'">Please fill the following details!</h4>
 						<hr>
 
 						<div class="form-group">
-							<label>First Name</label> <input type="text" name="fname"
-								class="form-control" placeholder="First Name" required><br>
+							<label for="validationCustom01" class="form-label">First Name</label> 
+							<input type="text" name="fname" class="form-control" id="validationCustom01" placeholder="First Name" required>
+							 
+							<div class="invalid-feedback">Please enter your First Name.</div>
+							
+							<br>
 						</div>
 
 						<div class="form-group">
-							<label>Last Name</label> <input type="text" name="lname"
-								class="form-control" placeholder="Last Name" required><br>
+							<label for="validationCustom02" class="form-label">Last Name</label> 
+							<input type="text" name="lname" class="form-control" id="validationCustom02" placeholder="Last Name" required>
+							 
+							<div class="invalid-feedback">Please enter your Last Name.</div>
+							
+							<br>
 						</div>
 
 						<div class="form-group">
-							<label>Email Address</label> <input type="text" name="email"
-								class="form-control" placeholder="name@example.com" required><br>
+							<label for="validationCustom03" class="form-label">Email Address</label> 
+							<input type="text" name="email" class="form-control" id="validationCustom03" placeholder="name@example.com" required>
+							 
+							<div class="invalid-feedback">Please enter your Email Address.</div>
+							
+							<br>
 						</div>
 
 						<div class="form-group">
-							<label>Contact Number</label> <input type="text" name="tel"
-								class="form-control" placeholder="Contact Number" required><br>
+							<label for="validationCustom04" class="form-label">Contact Number</label> 
+							<input type="text" name="tel" class="form-control" id="validationCustom04" placeholder="Contact Number" required>
+						 
+							<div class="invalid-feedback">Please enter your Contact Number.</div>
+							
+							<br>
 						</div>
 
 						<div class="form-group">
-							<label>Check In Date</label> <input type="date" name="sdate"
-								class="form-control" placeholder="mm/dd/yyyy" required><br>
+							<label for="validationCustom05" class="form-label">Check-In Date</label> 
+							<input type="date" name="sdate" class="form-control" id="validationCustom05" placeholder="mm/dd/yyyy" required>
+							 
+							<div class="invalid-feedback">Please select a Check-In Date.</div>
+							
+							<br>
 						</div>
 
 						<div class="form-group">
-							<label>Check Out Date</label> <input type="date" name="edate"
-								class="form-control" placeholder="mm/dd/yyyy" required><br>
+							<label for="validationCustom06">Check-Out Date</label> 
+							<input type="date" name="edate" class="form-control" id="validationCustom06" placeholder="mm/dd/yyyy" required>
+						 
+							<div class="invalid-feedback">Please select a Check-Out Date.</div>
+							
+							<br>
 						</div>
 
 						<div class="form-group">
-							<label>Number of Guests</label> <input type="number"
-								name="numofg" class="form-control"
-								placeholder="Number of Guests" required>
+							<label for="validationCustom07">Number of Guests</label> 
+							<input type="number" name="numofg" class="form-control" id="validationCustom07" placeholder="Number of Guests" required>
+						 
+							<div class="invalid-feedback">Please select number of guests.</div>
+							
 						</div>
 						<br> <label><b>Select Your Room</b></label> <br>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="classic" id="Radio1"> <label
-								class="form-check-label" for="flexRadioDefault1">
-								Classic Room - Rs. 20,000/= </label>
+							<input class="form-check-input" type="radio" name="rad" value="classic" id="validationFormCheck1" required> 
+							<label class="form-check-label"  for="validationFormCheck1">
+								Classic Room - Rs. 20,000/=
+						   </label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="suite" id="Radio2"> <label
-								class="form-check-label" for="flexRadioDefault1"> Suite
-								Room - Rs. 25,000/= </label>
+							<input class="form-check-input" type="radio" name="rad" value="suite" id="validationFormCheck2" required>
+							<label class="form-check-label" for="validationFormCheck2"> 
+							   Suite Room - Rs. 25,000/= 
+							</label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="family" id="Radio3"> <label
-								class="form-check-label" for="flexRadioDefault1"> Family
-								Room - Rs. 30,000/= </label>
+							<input class="form-check-input" type="radio" name="rad" value="family" id="validationFormCheck3" required>
+						    <label class="form-check-label" for="validationFormCheck3"> 
+						       Family Room - Rs. 30,000/= 
+						    </label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="deluxe" id="Radio4"> <label
-								class="form-check-label" for="flexRadioDefault1"> Deluxe
-								Room - Rs. 50,000/= </label>
+							<input class="form-check-input" type="radio" name="rad" value="deluxe" id="validationFormCheck4" required> 
+							<label class="form-check-label" for="validationFormCheck4"> 
+							   Deluxe Room - Rs. 50,000/= 
+							</label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="superior" id="Radio5"> <label
-								class="form-check-label" for="flexRadioDefault1">
-								Superior Room - Rs: 70,000/= </label>
+							<input class="form-check-input" type="radio" name="rad" value="superior" id="validationFormCheck5" required> 
+							<label class="form-check-label" for="validationFormCheck5">
+								Superior Room - Rs: 70,000/= 
+						    </label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="luxury" id="Radio6"> <label
-								class="form-check-label" for="flexRadioDefault1"> Luxury
-								Room - Rs. 100,000/= </label>
+							<input class="form-check-input" type="radio" name="rad" value="luxury" id="validationFormCheck6" required> 
+							<label class="form-check-label" for="validationFormCheck6"> 
+							    Luxury Room - Rs. 100,000/= 
+							</label>
 						</div>
 
 						<br>
@@ -234,11 +259,36 @@
 		<div class="text-center p-3"
 			style="background-color: rgba(0, 0, 0, 0.3);">
 			© 2021 Copyright: <a class="text-white"
-				href="https://mdbootstrap.com/" style="text-decoration: none;">Team
-				Alpha</a>
+				href="https://mdbootstrap.com/" style="text-decoration: none;">Team Alpha</a>
 		</div>
 
 	</div>
+	
+	<script>
+	
+	//Validation
+	// For disabling the form submission if there are invalid fields
+	(function () {
+	  'use strict'
 
+	  // Fetch the form we want to apply custom validation
+	  var forms = document.querySelectorAll('.needs-validation')
+
+	  // Loop over and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+	
+	</script>
+	 
 </body>
 </html>
