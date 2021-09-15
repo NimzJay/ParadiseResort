@@ -91,13 +91,13 @@
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form2Example17">Username</label> <input
 								type="text" name="user" id="form2Example17"
-								class="form-control form-control-lg" />
+								class="form-control form-control-lg" required/>
 						</div>
 
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form2Example27">Password</label> <input
 								type="password" name="pass" id="form2Example27"
-								class="form-control form-control-lg" />
+								class="form-control form-control-lg" required/>
 						</div>
 
 						<div class="row pt-1 mb-4">
@@ -111,12 +111,6 @@
 					</form>
 
 				</div>
-
-				<!-- </div>
-                <div class="col-sm-6 px-0 d-none d-sm-block">
-                    <img src="../img/hotel4.jpg"
-                        alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
-                </div> -->
 			</div>
 		</div>
 	</section>
