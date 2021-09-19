@@ -14,12 +14,12 @@ hr{
     width: 100%;
 }
 #logo{
-	
+	margin:auto;
 	display: block;
     width: 200px;
     height: 215px;
     border-radius: 10px;
-    margin: 10px;
+    
 }
 
 .profile{

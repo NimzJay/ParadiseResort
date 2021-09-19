@@ -62,7 +62,7 @@
 								class="icon"><i class="fas fa-desktop me-2"></i></span> <span
 								class="ms-1 d-none d-sm-inline item">Customer List View</span>
 						</a></li>
-						<li><a href="#" class="nav-link text-white"> <span
+						<li><a href="./NewUser.jsp" class="nav-link text-white"> <span
 								class="icon"><i class="fas fa-user-friends me-2"></i></span> <span
 								class="ms-1 d-none d-sm-inline item">Add New Customer</span>
 						</a></li>
