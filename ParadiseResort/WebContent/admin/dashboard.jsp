@@ -94,7 +94,36 @@
 														<h4>
 															<b>Number of Customers</b>
 														</h4>
-														<p>Architect & Engineer</p>
+														<%
+															int n=0,a=0;
+															try{
+																con = DBConn.getconn();																
+																st = con.createStatement();	
+																Statement st2 = con.createStatement();
+																
+																String sql =("SELECT COUNT(`uid`) AS `total` FROM `user` where `uType` LIKE 'C%'");	
+																String sql2 =("SELECT COUNT(`uid`) AS `total` FROM `user` where `uType` LIKE 'A%'");	
+																rs = st.executeQuery(sql);
+																ResultSet rs2 = st2.executeQuery(sql2);
+																
+																while(rs.next()){
+																	 n = rs.getInt("total");
+																}
+																while(rs2.next()){
+																	 a = rs2.getInt("total");
+																}
+																
+														%>		
+															<p>Total Clients : <%= n %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Total Admins : <%=a %> </p>
+															<% 
+																
+																
+															}catch(Exception e){
+																System.out.println("Error     "+e);
+																e.printStackTrace();
+															}
+																
+															%>
 													</div>
 												</div>
 											</div>
@@ -152,9 +181,64 @@
 												<div class="card">
 													<div class="con">
 														<h4>
-															<b>Available Rooms</b>
+															<b>Room Bookings</b>
 														</h4>
-														<p>Architect & Engineer</p>
+														<%	
+															
+															int r1=0,r2=0,r3=0,r4=0,r5=0;
+															try{
+																con = DBConn.getconn();																
+																st = con.createStatement();	
+																Statement st2 = con.createStatement();
+																Statement st3 = con.createStatement();
+																Statement st4 = con.createStatement();
+																Statement st5 = con.createStatement();
+																
+																String sql =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Classic'");	
+																String sql2 =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Suite'");
+																String sql3 =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Family'");
+																String sql4 =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Deluxe'");
+																String sql5 =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Superior'");
+																
+																rs = st.executeQuery(sql);
+																ResultSet rs2 = st2.executeQuery(sql2);
+																ResultSet rs3 = st3.executeQuery(sql3);
+																ResultSet rs4 = st4.executeQuery(sql4);
+																ResultSet rs5 = st5.executeQuery(sql5);
+																while(rs.next()){
+																	 r1 = rs.getInt("total");
+																	 
+																}
+																while(rs2.next()){
+																	 r2 = rs2.getInt("total");
+																	 
+																}
+																while(rs3.next()){
+																	 r3 = rs3.getInt("total");
+																	 
+																}
+																while(rs4.next()){
+																	 r4 = rs4.getInt("total");
+																	 
+																}
+																while(rs5.next()){
+																	 r5 = rs5.getInt("total");
+																	 
+																}
+																
+														%>		
+															<p>Classic : <%=r1 %>  Bookings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Suite : <%=r2 %> Bookings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Family : <%=r3 %> Bookings<br>
+															<br>Deluxe :  <%=r4 %> Bookings &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Superior : <%=r5 %> Bookings
+															</p>
+															<% 
+																
+																
+															}catch(Exception e){
+																System.out.println("Error     "+e);
+																e.printStackTrace();
+															}
+																
+															%>
 													</div>
 												</div>
 											</div>
@@ -162,9 +246,47 @@
 												<div class="card">
 													<div class="con">
 														<h4>
-															<b>Available Halls</b>
+															<b>Hall Bookings</b>
 														</h4>
-														<p>Architect & Engineer</p>
+														<%	
+															int h1=0,h2=0,h3=0;
+															
+															try{
+																con = DBConn.getconn();																
+																st = con.createStatement();	
+																Statement st2 = con.createStatement();
+																Statement st3 = con.createStatement();
+																
+																String sql =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Hall 1'");	
+																String sql2 =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Hall 2'");
+																String sql3 =("SELECT COUNT(`bid`) AS `total` FROM `booking` where `type` LIKE 'Hall 3'");
+																rs = st.executeQuery(sql);
+																ResultSet rs2 = st2.executeQuery(sql2);
+																ResultSet rs3 = st3.executeQuery(sql3);
+																while(rs.next()){
+																	 h1 = rs.getInt("total");
+																	 
+																}
+																while(rs2.next()){
+																	 h2 = rs2.getInt("total");
+																	 
+																}
+																while(rs3.next()){
+																	 h3 = rs3.getInt("total");
+																	 
+																}
+																
+														%>		
+															<p>Hall 1: <%=h1 %> Bookings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Hall 2 : <%=h2 %> Bookings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>  Hall 3 : <%=h3 %> Bookings</p>
+															<% 
+																
+																
+															}catch(Exception e){
+																System.out.println("Error     "+e);
+																e.printStackTrace();
+															}
+																
+															%>
 													</div>
 												</div>
 											</div>
