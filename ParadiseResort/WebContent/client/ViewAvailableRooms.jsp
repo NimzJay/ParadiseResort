@@ -120,9 +120,9 @@
 										while (rs2.next()) {
 									%>
 									<p class="card-text">
-										<span>Max:</span> 3 Persons <br> <span>Size:</span> 55 m2<br>
-										<span>View:</span> Sea View<br> <span>Beds:</span> 2<br>
-										<span>Rooms:</span><%=rs2.getInt("count")%><br>
+										<span>Max : </span> 3 Persons <br> <span>Size : </span> 55 m2<br>
+										<span>View : </span> Sea View<br> <span>Beds : </span> 2<br>
+										<span>Rooms : </span><%=rs2.getInt("count")%><br>
 										<%
 											}
 										%>
@@ -148,9 +148,9 @@
 										while (rs3.next()) {
 									%>
 									<p class="card-text">
-										<span>Max:</span> 3 Persons <br> <span>Size:</span> 50 m2<br>
-										<span>View:</span> Sea View<br> <span>Beds:</span> 2<br>
-										<span>Rooms:</span><%=rs3.getInt("count")%><br>
+										<span>Max : </span> 3 Persons <br> <span>Size : </span> 50 m2<br>
+										<span>View : </span> Sea View<br> <span>Beds : </span> 2<br>
+										<span>Rooms : </span><%=rs3.getInt("count")%><br>
 										<%
 											}
 										%>
@@ -176,9 +176,9 @@
 										while (rs4.next()) {
 									%>
 									<p class="card-text">
-										<span>Max:</span> 2 Persons <br> <span>Size:</span> 100
-										m2<br> <span>View:</span> Sea View<br> <span>Beds:</span>
-										1<br> <span>Rooms:</span><%=rs4.getInt("count")%><br>
+										<span>Max : </span> 2 Persons <br> <span>Size : </span> 100
+										m2<br> <span>View : </span> Sea View<br> <span>Beds : </span>
+										1<br> <span>Rooms : </span><%=rs4.getInt("count")%><br>
 										<%
 											}
 										%>
@@ -219,9 +219,9 @@
 											while (rs1.next()) {
 										%>
 										<p class="card-text">
-											<span>Max:</span> 2 Persons <br> <span>Size:</span> 55
-											m2<br> <span>View:</span> Sea View<br> <span>Beds:</span>
-											2<br> <span>Rooms:</span><%=rs1.getInt("count")%><br>
+											<span>Max : </span> 2 Persons <br> <span>Size : </span> 55
+											m2<br> <span>View : </span> Sea View<br> <span>Beds : </span>
+											2<br> <span>Rooms : </span><%=rs1.getInt("count")%><br>
 										<hr>
 										<%
 											}
@@ -247,9 +247,9 @@
 											while (rs5.next()) {
 										%>
 										<p class="card-text">
-											<span>Max:</span> 2 Persons <br> <span>Size:</span> 65
-											m2<br> <span>View:</span> Sea View<br> <span>Beds:</span>
-											1<br> <span>Rooms:</span><%=rs5.getInt("count")%><br>
+											<span>Max : </span> 2 Persons <br> <span>Size : </span> 65
+											m2<br> <span>View : </span> Sea View<br> <span>Beds : </span>
+											1<br> <span>Rooms : </span><%=rs5.getInt("count")%><br>
 										<hr>
 										<%
 											}
@@ -274,9 +274,9 @@
 											while (rs6.next()) {
 										%>
 										<p class="card-text">
-											<span>Max:</span> 2 Persons <br> <span>Size:</span> 75
-											m2<br> <span>View:</span> Sea View<br> <span>Beds:</span>
-											1<br> <span>Rooms:</span><%=rs6.getInt("count")%><br>
+											<span>Max : </span> 2 Persons <br> <span>Size : </span> 75
+											m2<br> <span>View : </span> Sea View<br> <span>Beds : </span>
+											1<br> <span>Rooms : </span><%=rs6.getInt("count")%><br>
 										<hr>
 										<%
 											}

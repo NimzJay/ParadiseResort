@@ -128,7 +128,7 @@
 							<div class="card h-100">
 								<div class="card-body">
 									<h6 class="d-flex align-items-center mb-3">
-										<i class="material-icons text-info mr-2">Room Boking</i>Status
+										<i class="material-icons text-info mr-2">Room Booking</i>Status
 									</h6>
 
 									<h6>Room Type</h6>

@@ -174,11 +174,11 @@
 						<br>
 
 						<div class="row">
-							<div class="col">
-								<button type="submit" class="btn btn-primary w-100" onClick="">Submit</button>
+						    <div class="col">
+								<button type="reset" class="btn btn-danger w-100">Reset</button>
 							</div>
 							<div class="col">
-								<button type="reset" class="btn btn-danger w-100">Reset</button>
+								<button type="submit" class="btn btn-primary w-100" onClick="">Submit</button>
 							</div>
 						</div>
 						<br> <br>
