@@ -52,11 +52,13 @@ public class HallBooking extends HttpServlet {
 			int numofg = Integer.parseInt(request.getParameter("numofg"));
 			String hall = request.getParameter("rad");
 			 if(hall.equals("Hall 1")) {
-				  price = 100000;
+				  price = 700000;
 			 }else if(hall.equals("Hall 2")){
 				  price = 300000;
+			}else if(hall.equals("Hall 3")){
+				 price = 250000;
 			}else {
-				 price = 700000;
+				price = 350000;
 			}
 			Connection con = DBConn.getconn();
 			String sql = "INSERT INTO booking(firstname, secondname, email, tel, checkin, checkout, guests, type, price) VALUES ('" + fname + "','" + lname + "','" + email + "','" + tel + "','" + stdate + "','" + ldate + "','" + numofg + "','" + hall + "','" + price + "')";

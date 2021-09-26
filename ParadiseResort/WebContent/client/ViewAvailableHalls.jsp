@@ -1,5 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="dbConnection.DBConn"%>
+
+<%
+	Statement st1, st2, st3, st4  = null;
+	ResultSet rs1, rs2, rs3, rs4  = null;
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -17,6 +32,30 @@
 
 </head>
 <body class="bg-halls">
+
+<%
+		try {
+
+			int i = 0;
+
+			Connection con = DBConn.getconn();
+			st1 = con.createStatement();
+			st2 = con.createStatement();
+			st3 = con.createStatement();
+			st4 = con.createStatement();
+
+			String sql1 = ("SELECT COUNT(hid) AS count FROM hall WHERE hallType='Hall 1' AND availability='Yes'");
+			String sql2 = ("SELECT COUNT(hid) AS count FROM hall WHERE hallType='Hall 2' AND availability='Yes'");
+			String sql3 = ("SELECT COUNT(hid) AS count FROM hall WHERE hallType='Hall 3' AND availability='Yes'");
+			String sql4 = ("SELECT COUNT(hid) AS count FROM hall WHERE hallType='Outdoor' AND availability='Yes'");
+			 
+			rs1 = st1.executeQuery(sql1);
+			rs2 = st2.executeQuery(sql2);
+			rs3 = st3.executeQuery(sql3);
+			rs4 = st4.executeQuery(sql4);
+			 
+	%>
+
 	<nav id="nav"
 		class="navbar affix fixed-top navbar-expand-sm sticky-top"
 		data-spy="affix">
@@ -70,15 +109,41 @@
 									<br>
 									<h3 class="card-title">Indoor Events</h3>
 									<hr>
-
+                                   
 									<p class="card-text">
 										Paradise Resort has the most extensive and versatile events
 										space in the country. Offers a range of flexible venues
-										including the signature Ballroom, the largest pillar-less
+										including the Signature Ballroom, the largest pillar-less
 										ballroom in the region that can cater to seated banquets for
-										up to 1,440 guests. The property also consists of a Signature
-										Ballroom catering to banquets up to 450 guests, a large
-										outdoor space and Spices, our dedicated function rooms. <br>
+										up to 1,440 guests. The property also consists of a Classic
+										Ballroom and a Lotus Ballroom catering to banquets up to 500 guests,
+										a large outdoor space and Spices, our dedicated function rooms. <br>
+										
+										<h5><I>Available Venues</I></h5>
+										<%
+										     while (rs1.next()) {
+									    %>
+										<span>Signature Ballroom : </span><%=rs1.getInt("count")%><br>
+										<%
+										    }
+										%>
+										
+										<%
+										     while (rs2.next()) {
+									    %>
+										<span>Classic Ballroom : </span><%=rs2.getInt("count")%><br>
+										<%
+										    }
+										%>
+										<%
+										     while (rs3.next()) {
+									    %>
+										<span>Lotus Ballroom : </span><%=rs3.getInt("count")%><br>
+										
+										<%
+										    }
+										%>
+										
 										<br> <b> For more details, please contact us. </b> <br>
 										<br> <i> Phone : (+94) 11 788 8267 <br> Email :
 											events.tb@paradiseresort.com
@@ -112,18 +177,32 @@
 									<div class="card-body">
 										<h3 class="card-title">Outdoor Events</h3>
 										<hr>
+										 <%
+										     while (rs4.next()) {
+									     %>
 										<p class="card-text">
 											Have an enchanting outdoor event with a gentle breeze around
 											you on golden shores in the Pearl of the Indian Ocean.
 											Celebrate your special days with an unforgettable outdoor
 											event at Paradise Resort. From intimate ceremonies to grand
 											celebrations by the sea, we will help you plan a unique event
-											where you can enjoy your day to the fullest. <br> <br>
+											where you can enjoy your day to the fullest. <br> 
+											
+											<h5><I>Available Venues</I></h5>
+											 <span>Outdoor : </span><%=rs4.getInt("count")%><br><br>
+											
 											<b> For more details, please contact us. </b> <br> <br>
 											<i> Phone : (+94) 11 788 8267 <br> Email :
 												events.tb@paradiseresort.com
 											</i>
 										<hr>
+										<%
+										    }
+											} catch (Exception ex) {
+												System.out.println("Error" + ex);
+												ex.printStackTrace();
+											}
+										%>
 										</p>
 										<a href="NewHallBooking.jsp" class="btn btn-primary">Book
 											Now</a>
