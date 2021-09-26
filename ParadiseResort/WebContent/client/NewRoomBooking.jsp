@@ -87,7 +87,7 @@
 
 						<div class="form-group">
 							<label for="validationCustom03" class="form-label">Email Address</label> 
-							<input type="text" name="email" class="form-control" id="validationCustom03" placeholder="name@example.com" required>
+							<input type="text" name="email" class="form-control" id="validationCustom03" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 							 
 							<div class="invalid-feedback">Please enter your Email Address.</div>
 							
@@ -287,6 +287,7 @@
 	      }, false)
 	    })
 	})()
+	
 	
 	</script>
 	 
