@@ -161,47 +161,6 @@
 						</div>
 						<br> <label><b>Select Your Room</b></label> <br>
 						<div class="form-check">
-<<<<<<< HEAD
-							<input class="form-check-input" type="radio" name="rad"
-								value="classic" id="validationFormCheck1" required> <label
-								class="form-check-label" for="validationFormCheck1">
-								Classic Room - Rs. 20,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="suite" id="validationFormCheck2" required> <label
-								class="form-check-label" for="validationFormCheck2">
-								Suite Room - Rs. 25,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="family" id="validationFormCheck3" required> <label
-								class="form-check-label" for="validationFormCheck3">
-								Family Room - Rs. 30,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="deluxe" id="validationFormCheck4" required> <label
-								class="form-check-label" for="validationFormCheck4">
-								Deluxe Room - Rs. 50,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="superior" id="validationFormCheck5" required> <label
-								class="form-check-label" for="validationFormCheck5">
-								Superior Room - Rs: 70,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="luxury" id="validationFormCheck6" required> <label
-								class="form-check-label" for="validationFormCheck6">
-								Luxury Room - Rs. 100,000/= </label>
-=======
 							<input class="form-check-input" type="radio" name="rad" value="Classic Room" id="validationFormCheck1" required> 
 							<label class="form-check-label"  for="validationFormCheck1">
 								Classic Room - Rs. 20,000/=
@@ -241,7 +200,6 @@
 							<label class="form-check-label" for="validationFormCheck6"> 
 							    Luxury Room - Rs. 100,000/= 
 							</label>
->>>>>>> 8250bd50cb74beb0cd700a8110cba29951794b8a
 						</div>
 
 						<br>
