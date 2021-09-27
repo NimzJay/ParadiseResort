@@ -143,31 +143,31 @@
 							<div class="card mb-3">
 								<div class="card-body">
 									<div class="row">
-										<div class="col-sm-3">
+										 
 											<h6 class="mb-0">
 												Full Name :
 												<%=fname%>
 												<%=sname%>
 											</h6>
-										</div>
-										<div class="col-sm-9 text-secondary">&nbsp;&nbsp;</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<h6 class="mb-0">
-												Email :
-												<%=email%></h6>
-										</div>
+									
 										<div class="col-sm-9 text-secondary"></div>
 									</div>
 									<hr>
 									<div class="row">
-										<div class="col-sm-3">
+										 
+											<h6 class="mb-0">
+												Email :
+												<%=email%></h6>
+									 
+										<div class="col-sm-9 text-secondary"></div>
+									</div>
+									<hr>
+									<div class="row">
+										 
 											<h6 class="mb-0">
 												Telephone :
 												<%=tel%></h6>
-										</div>
+									 
 										<div class="col-sm-9 text-secondary"></div>
 									</div>
 									<%

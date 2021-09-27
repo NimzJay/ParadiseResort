@@ -77,8 +77,8 @@
 					<b>New Room Booking</b>
 				</h2>
 				<br>
-				<form class="container-fluid row g-3 needs-validation"
-					action="../RoomBooking" method="POST" novalidate>
+				<form class="container-fluid"
+					action="../RoomBooking" method="POST">
 					<div class="container">
 
 						<h4 style="font-family: 'Calibri Light'">Please fill the
@@ -88,7 +88,7 @@
 						<div class="form-group">
 							<label for="validationCustom01" class="form-label">First
 								Name</label> <input type="text" name="fname" class="form-control"
-								id="validationCustom01" placeholder="First Name" required>
+								id="valFirstName" placeholder="First Name" required>
 
 							<div class="invalid-feedback">Please enter your First Name.</div>
 
@@ -98,7 +98,7 @@
 						<div class="form-group">
 							<label for="validationCustom02" class="form-label">Last
 								Name</label> <input type="text" name="lname" class="form-control"
-								id="validationCustom02" placeholder="Last Name" required>
+								id="valLastName" placeholder="Last Name" required>
 
 							<div class="invalid-feedback">Please enter your Last Name.</div>
 
@@ -108,8 +108,7 @@
 						<div class="form-group">
 							<label for="validationCustom03" class="form-label">Email
 								Address</label> <input type="text" name="email" class="form-control"
-								id="validationCustom03" placeholder="name@example.com"
-								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+								id="valEmail" placeholder="name@example.com" required>
 
 							<div class="invalid-feedback">Please enter your Email
 								Address.</div>
@@ -120,7 +119,7 @@
 						<div class="form-group">
 							<label for="validationCustom04" class="form-label">Contact
 								Number</label> <input type="text" name="tel" class="form-control"
-								id="validationCustom04" placeholder="Contact Number" required>
+								id="valContact" placeholder="Contact Number" required>
 
 							<div class="invalid-feedback">Please enter your Contact
 								Number.</div>
@@ -161,47 +160,6 @@
 						</div>
 						<br> <label><b>Select Your Room</b></label> <br>
 						<div class="form-check">
-<<<<<<< HEAD
-							<input class="form-check-input" type="radio" name="rad"
-								value="classic" id="validationFormCheck1" required> <label
-								class="form-check-label" for="validationFormCheck1">
-								Classic Room - Rs. 20,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="suite" id="validationFormCheck2" required> <label
-								class="form-check-label" for="validationFormCheck2">
-								Suite Room - Rs. 25,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="family" id="validationFormCheck3" required> <label
-								class="form-check-label" for="validationFormCheck3">
-								Family Room - Rs. 30,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="deluxe" id="validationFormCheck4" required> <label
-								class="form-check-label" for="validationFormCheck4">
-								Deluxe Room - Rs. 50,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="superior" id="validationFormCheck5" required> <label
-								class="form-check-label" for="validationFormCheck5">
-								Superior Room - Rs: 70,000/= </label>
-						</div>
-
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="rad"
-								value="luxury" id="validationFormCheck6" required> <label
-								class="form-check-label" for="validationFormCheck6">
-								Luxury Room - Rs. 100,000/= </label>
-=======
 							<input class="form-check-input" type="radio" name="rad" value="Classic Room" id="validationFormCheck1" required> 
 							<label class="form-check-label"  for="validationFormCheck1">
 								Classic Room - Rs. 20,000/=
@@ -241,7 +199,6 @@
 							<label class="form-check-label" for="validationFormCheck6"> 
 							    Luxury Room - Rs. 100,000/= 
 							</label>
->>>>>>> 8250bd50cb74beb0cd700a8110cba29951794b8a
 						</div>
 
 						<br>
@@ -251,7 +208,7 @@
 								<button type="reset" class="btn btn-danger w-100">Reset</button>
 							</div>
 							<div class="col">
-								<button type="submit" class="btn btn-primary w-100" onClick="">Submit</button>
+								<button type="submit" class="btn btn-primary w-100" onClick="validate()">Submit</button>
 							</div>
 						</div>
 						<br> <br>
@@ -340,26 +297,75 @@
 
 	<script>
 		//Validation
-		// For disabling the form submission if there are invalid fields
-		(function() {
-			'use strict'
+		 
+		 
+function validateName()
+{
+	var name = document.getElementById("valFirstName").value;
+	if((name == "") || (name == null))
+	{
+		alert("Please enter your First Name");
+		return false;
+	}
+	return true;
+}
 
-			// Fetch the form we want to apply custom validation
-			var forms = document.querySelectorAll('.needs-validation')
-
-			// Loop over and prevent submission
-			Array.prototype.slice.call(forms).forEach(function(form) {
-				form.addEventListener('submit', function(event) {
-					if (!form.checkValidity()) {
-						event.preventDefault()
-						event.stopPropagation()
-					}
-
-					form.classList.add('was-validated')
-				}, false)
-			})
-		})()
-	</script>
+	
+function validate()
+{
+	
+	if(validateName() && validateLastName() && validateEmail() && Contact())
+	{
+		alert("You have registered to the site ");
+	}
+	else
+	{
+		event.preventDefault();
+	}
+	
+}
+	
+function validateLastName()
+{
+	var nickname = document.getElementById("valLastName").value;
+	if((nickname == "")|| (nickname == null))
+	{
+		alert("Please enter your Last Name");
+		return false;
+	}
+	return true;
+	
+}
+	
+function validateEmail()
+{
+		var email = document.getElementById("valEmail").value;
+		var dot = email.lastIndexOf(".");
+		var at = email.indexOf("@");
+		var len = email.length;
+		
+		if((at<1)||(dot-at<2)||(len-dot <3))
+		{
+			alert("Please enter a valid email");
+			return false;
+		}
+		return true;
+}
+	
+function Contact()
+{
+	var contact = document.getElementById("valContact").value;
+	
+	
+	if((contact.length!=10)||(isNaN(contact)))
+	{
+		alert("Please enter a valid contact number");
+		return false;
+	}
+	return true;
+}
+	
+</script>
 
 </body>
 </html>
