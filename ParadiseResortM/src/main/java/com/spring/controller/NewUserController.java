@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import com.spring.dao.UserDao;
 import com.spring.model.User;
@@ -17,6 +18,7 @@ import com.spring.model.User;
 /**
  * Servlet implementation class NewUserController
  */
+@Controller
 public class NewUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -51,7 +53,6 @@ public class NewUserController extends HttpServlet {
 		st.setuType(type);
 
 		int r = dao.addUser(st);
-		// request.setAttribute("msg", r);
 		if (r == 1) {
 //			RequestDispatcher rd = request.getRequestDispatcher("/dashboard.jsp");
 //			rd.forward(request, response);
