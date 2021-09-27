@@ -45,6 +45,109 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
+<script type="text/javascript">
+
+function validateName()
+{
+	var name = document.getElementById("txtuserName1").value;
+	if((name == "") || (name == null))
+	{
+		alert("please enter your name");
+		return false;
+	}
+	return true;
+}
+
+	
+function validate()
+{
+	
+	if(validateName() && validateLastName() && validateEmail() && Contact())
+	{
+		alert("you have registered to the site ");
+	}
+	else
+	{
+		event.preventDefault();
+	}
+	
+}
+	
+function validateLastName()
+{
+	var nickname = document.getElementById("txtuserName2").value;
+	if((nickname == "")|| (nickname == null))
+	{
+		alert("please enter your Nickname");
+		return false;
+	}
+	return true;
+	
+}
+	
+function validateEmail()
+{
+		var email = document.getElementById("txtemail").value;
+		var dot = email.lastIndexOf(".");
+		var at = email.indexOf("@");
+		var len = email.length;
+		
+		if((at<1)||(dot-at<2)||(len-dot <3))
+		{
+			alert("please enter a valid email");
+			return false;
+		}
+		return true;
+}
+	
+function Contact()
+{
+	var contact = document.getElementById("txtContact").value;
+	
+	
+	if((contact!=10)&&(isNaN(contact)))
+	{
+		alert("please enter a valid contact number");
+		return false;
+	}
+	return true;
+}
+	
+//  function validatePassword()
+//  {
+//  	var pw = document.getElementById("txtPassword").value;
+//  	var cpw = document.getElementById("txtConfirmPassword").value;
+	
+//  	if((pw.length < 5)&&(pw != cpw))
+//  		{
+//  			alert("please re enter the password");
+//  			return false;
+//  		}
+//  	return true;
+	
+//  }
+
+// function validateStudNo()
+// {
+// 		var studNo = document.getElementById("txtStudNo").value;
+// 		var R = studNo.indexOf("R");
+// 		var E = studNo.indexOf("E");
+// 		var G = studNo.indexOf("G");
+		
+// 		if((R!=0)&&(E!=1)&&(G!=2)&&(studNo.length!=6))
+// 		{
+// 			alert("please enter a valid registration number");
+// 			return false;
+// 		}
+// 		return true;
+// }
+
+</script>
+
+
+</script>
+	
 </head>
 <body class="bg-hallbooking">
 
@@ -107,13 +210,13 @@
 						<div class="form-group">
 							<label for="username"><span class="glyphicon"> </span>
 								First Name </label> <input type="text" name="fname" class="form-control"
-								id="txtuserName" placeholder="Enter Username" required>
+								id="txtuserName1" placeholder="Enter Username" required>
 						</div>
 
 						<div class="form-group">
 							<label for="username"><span class="glyphicon"> </span>
 								Last Name </label> <input type="text" name="lname" class="form-control"
-								id="txtuserName" placeholder="Enter Username" required>
+								id="txtuserName2" placeholder="Enter Username" required>
 						</div>
 
 						<div class="form-group">
@@ -127,7 +230,7 @@
 							<label for="phone"> <span class="glyphicon"></span>
 								Contact Number
 							</label> <input type="text" name="tel" class="form-control"
-								id="txtnumber" placeholder="Enter Mobile Number" required>
+								id="txtContact" placeholder="Enter Mobile Number" required>
 						</div>
 						<br>
 						<hr>
@@ -138,21 +241,21 @@
 							<label for="date"> <span class="glyphicon"></span>
 								Check-in Date
 							</label> <input type="date" name="sdate" class="form-control"
-								id="txtdate">
+								id="txtdate" required>
 						</div>
 
 						<div class="form-group">
 							<label for="date"> <span class="glyphicon"></span>
 								Check-out Date
 							</label> <input type="date" name="edate" class="form-control"
-								id="txtdate">
+								id="txtdate" required>
 						</div>
 
 						<div class="form-group">
 							<label for="guest"> <span class="glyphicon"></span>
 								Select the Number of Guests
 							</label> <input type="number" name="numofg" class="form-control"
-								id="txtguests">
+								id="txtguests" required>
 						</div>
 
 						<br>
@@ -193,7 +296,7 @@
 							</div>
 							<div class="col">
 
-								<button type="submit" class="btn btn-primary w-100" onClick="">Submit</button>
+								<button type="submit" class="btn btn-primary w-100" onClick="validate()">Submit</button>
 
 
 							</div>
