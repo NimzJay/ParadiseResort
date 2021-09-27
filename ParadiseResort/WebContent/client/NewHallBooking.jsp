@@ -53,7 +53,7 @@ function validateName()
 	var name = document.getElementById("txtuserName1").value;
 	if((name == "") || (name == null))
 	{
-		alert("please enter your name");
+		alert("please enter your first name");
 		return false;
 	}
 	return true;
@@ -79,7 +79,7 @@ function validateLastName()
 	var nickname = document.getElementById("txtuserName2").value;
 	if((nickname == "")|| (nickname == null))
 	{
-		alert("please enter your Nickname");
+		alert("please enter your last name");
 		return false;
 	}
 	return true;
@@ -106,13 +106,15 @@ function Contact()
 	var contact = document.getElementById("txtContact").value;
 	
 	
-	if((contact!=10)&&(isNaN(contact)))
+	if((contact.length!=10)||(isNaN(contact)))
 	{
 		alert("please enter a valid contact number");
 		return false;
 	}
 	return true;
 }
+
+
 	
 //  function validatePassword()
 //  {
@@ -296,7 +298,7 @@ function Contact()
 							</div>
 							<div class="col">
 
-								<button type="submit" class="btn btn-primary w-100" onClick="validate()">Submit</button>
+								<button type="submit" class="btn btn-primary w-100" onclick="validate()">Submit</button>
 
 
 							</div>
