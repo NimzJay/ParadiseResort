@@ -125,24 +125,28 @@
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
 								value="Hall 1" id="Radio1"> <label
-								class="form-check-label" for="flexRadioDefault1"> Signature Ballroom - Rs: 700,000/= </label>
+								class="form-check-label" for="flexRadioDefault1">
+								Signature Ballroom - Rs: 700,000/= </label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
 								value="Hall 2" id="Radio2" checked> <label
-								class="form-check-label" for="flexRadioDefault2"> Classic Ballroom - Rs: 300,000/= </label>
+								class="form-check-label" for="flexRadioDefault2">
+								Classic Ballroom - Rs: 300,000/= </label>
 						</div>
 
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
 								value="Hall 3" id="Radio3" checked> <label
-								class="form-check-label" for="flexRadioDefault3"> Lotus Ballroom - Rs: 250,000/= </label>
+								class="form-check-label" for="flexRadioDefault3"> Lotus
+								Ballroom - Rs: 250,000/= </label>
 						</div>
-						
+
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
 								value="Outdoor" id="Radio4" checked> <label
-								class="form-check-label" for="flexRadioDefault4"> Outdoor - Rs: 350,000/= </label>
+								class="form-check-label" for="flexRadioDefault4">
+								Outdoor - Rs: 350,000/= </label>
 						</div>
 
 						<hr>
@@ -152,7 +156,10 @@
 								<button type="reset" class="btn btn-danger w-100">Reset</button>
 							</div>
 							<div class="col">
+
 								<button type="submit" class="btn btn-primary w-100" onClick="">Submit</button>
+
+
 							</div>
 						</div>
 

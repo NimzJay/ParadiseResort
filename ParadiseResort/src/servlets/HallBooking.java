@@ -1,6 +1,6 @@
 package servlets;
 
-import java.io.IOException; 
+import java.io.IOException;  
 import java.time.format.DateTimeFormatter;
 import java.sql.Connection;
 import java.sql.Date;  
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dbConnection.DBConn;
+import servlets.Session;
 /**
  * Servlet implementation class HallBooking
  */
@@ -67,6 +68,7 @@ public class HallBooking extends HttpServlet {
 			st.executeUpdate(sql);
 			System.out.println("Hall Booked Successfully");
 //			request.getRequestDispatcher("../client/UserProfileBookingStatusPage.jsp").forward(request, response);
+			response.sendRedirect("client/UserProfileBookingStatusPage.jsp");
 			con.close();
 			
 		}catch (Exception e) {

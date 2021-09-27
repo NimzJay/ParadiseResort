@@ -1,5 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="dbConnection.DBConn"%>
+<%@page import="servlets.Session"%>
+
+
+<%
+	String driverName = "com.mysql.jdbc.Driver";
+	try {
+		System.out.println("Connected ");
+		Class.forName(driverName);
+	} catch (ClassNotFoundException ex) {
+		System.out.println("Error" + ex);
+		ex.printStackTrace();
+	}
+	Connection con = null;
+	Statement st,st2 = null;
+	ResultSet rs,rs2 = null;
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -12,6 +35,7 @@
 <link rel="stylesheet" href="../css/navbar.css" />
 <script src="../js/navbar2.js"></script>
 <link rel="stylesheet" href="../css/hiran.css">
+<link rel="stylesheet" href="../css/dash.css">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -46,7 +70,7 @@
 		</div>
 	</div>
 	</nav>
-	<div class="container" style="margin-top:100px;">
+	<div class="container" style="margin-top: 100px;">
 		<div class="main-body mt-5" id="card">
 			<form class="container-fluid" action="" method="post">
 				<div class="container">
@@ -123,75 +147,55 @@
 
 					</div>
 
-					<div class="row gutters-sm">
-						<div class="col-sm-6 mb-3">
-							<div class="card h-100">
-								<div class="card-body">
-									<h6 class="d-flex align-items-center mb-3">
-										<i class="material-icons text-info mr-2">Room Booking</i>Status
-									</h6>
-
-									<h6>Room Type</h6>
-									<div>
-										<input type="text" id="txtroom" name="room" value="Family"
-											readonly><br>
-									</div>
-									<hr>
-
-									<h6>Number of Rooms</h6>
-									<div>
-										<input type="text" id="txtnosroom" name="room" value="2"
-											readonly><br>
-									</div>
-									<hr>
-
-									<h6>Number Of Guests</h6>
-									<div>
-										<input type="text" id="txtNoOfGuests" name="guests" value="5"
-											readonly><br>
-									</div>
-									<hr>
-									<h6>Check in Date</h6>
-									<div>
-										<input type="text" id="txtindate" name="inDate"
-											value="2021/09/05" readonly><br>
-									</div>
-									<hr>
-									<h6>Check out Date</h6>
-									<div>
-										<input type="text" id="txtoutdate" name="outDate"
-											value="2021/09/08" readonly><br>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 mb-3">
-							<div class="card h-100">
-								<div class="card-body">
-									<h6 class="d-flex align-items-center mb-3">
-										<i class="material-icons text-info mr-2">Reception Hall
-											Booking</i>Status
-									</h6>
-									<h6>Hall Type</h6>
-									<div>
-										<input type="text" id="txthall" name="hall" value="Hall 01"
-											readonly><br>
-									</div>
-									<hr>
-									<h6>Number of Guests</h6>
-									<div>
-										<input type="text" id="txthallGuests" name="guests"
-											value="150" readonly><br>
-									</div>
-									<hr>
-									<h6>Date</h6>
-									<div>
-										<input type="text" id="txthalldate" name="Date"
-											value="2021/09/10" readonly><br>
-									</div>
-
-								</div>
+					<div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="card">
+							<div class="con">
+								<h4>
+									<b>Booking List</b>
+								</h4>
+								<p>Here are the all booking details.</p>
+								<table>
+									<tr>
+										<th>ID</th>
+										<th>Fisrt Name</th>
+										<th>Email</th>
+										<th>Tel</th>
+										<th>Checkin</th>
+										<th>Checkout</th>
+										<th>Guests</th>
+										<th>Type</th>
+									</tr>
+									<%
+															try{
+																con = DBConn.getconn();
+																st = con.createStatement();
+																String sql = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking`");
+																
+																
+																rs = st.executeQuery(sql);
+																while(rs.next()){
+																	
+														%>
+									<tr>
+										<td class="booking"><%=rs.getInt(1)%></td>
+										<td class="booking"><%=rs.getString(2)%></td>
+										<td class="booking"><%=rs.getString(3) %></td>
+										<td class="booking"><%=rs.getString(4) %></td>
+										<td class="booking"><%=rs.getDate(5) %></td>
+										<td class="booking"><%=rs.getDate(6) %></td>
+										<td class="booking"><%=rs.getInt(7) %></td>
+										<td class="booking"><%=rs.getString(8) %></td>
+									</tr>
+									<% 
+																}
+																
+															}catch(Exception e){
+																System.out.println("Error     "+e);
+																e.printStackTrace();
+															}
+																
+														%>
+								</table>
 							</div>
 						</div>
 					</div>
@@ -200,7 +204,7 @@
 		</div>
 	</div>
 
-<!-- Footer -->
+	<!-- Footer -->
 	<div class="bg-blue text-white text-md-start">
 		<!-- Grid container -->
 		<div class="container p-4">
