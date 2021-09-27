@@ -6,7 +6,10 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="dbConnection.DBConn"%>
-
+<%@page import="servlets.Session"%>
+<%
+	String user = Session.getUser();
+%>
 <%
 	String driverName = "com.mysql.jdbc.Driver";
 	try {
@@ -74,8 +77,31 @@
 					<hr>
 					<div class="profile" style="width: 100%">
 						<img src="../img/User01.png" alt="profile_picture">
-						<h3>Anamika Roy</h3>
-						<p>Designer</p>
+						<%
+							user = Session.getUser();
+							String fname = null, sname = null, email = null, uname = null, tel = null;
+							try {
+								con = DBConn.getconn();
+								st = con.createStatement();
+								String sql1 = ("SELECT `uid`, `fname`, `lname`, `username`, `password`, `nic`, `email`, `contact`, `image`, `uType` FROM `user` WHERE `username` LIKE '"
+										+ user + "'");
+								rs = st.executeQuery(sql1);
+								while (rs.next()) {
+									uname = rs.getString("username");
+									tel = rs.getString("contact");
+									fname = rs.getString("fname");
+									sname = rs.getString("lname");
+									email = rs.getString("email");
+								}
+						%>
+						<h3><%=fname%></h3>
+						<p><%=email%></p>
+						<%
+							} catch (Exception e) {
+								System.out.println("Error     " + e);
+								e.printStackTrace();
+							}
+						%>
 					</div>
 				</div>
 

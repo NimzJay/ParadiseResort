@@ -14,6 +14,11 @@
 	Statement st1, st2, st3, st4, st5, st6 = null;
 	ResultSet rs1, rs2, rs3, rs4, rs5, rs6 = null;
 %>
+<%@page import="servlets.Session"%>
+
+<%
+	String user = Session.getUser();
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -83,8 +88,19 @@
 					class="nav-link w-100" href="ViewAvailableRooms.jsp">Book Rooms</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="ViewAvailableHalls.jsp">Book Halls</a></li>
-				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+				<%
+					if ((user == null) || (user == "")) {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
 					class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+				<%
+					} else {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="UserProfileBookingStatusPage.jsp"><%=user%></a></li>
+				<%
+					}
+				%>
 			</ul>
 		</div>
 	</div>

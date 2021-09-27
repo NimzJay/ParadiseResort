@@ -27,6 +27,70 @@
 <link rel="stylesheet" href="../css/dash.css" />
 
 <title>New User | Paradise Resort</title>
+
+<script type="text/javascript">
+
+
+
+function valipassword()
+{
+    var pw = document.getElementById("pass").value;
+    var cpw = document.getElementById("repass").value;
+  
+    if((pw.length < 5)&&(pw != cpw))
+        {
+            alert("please re enter the password");
+            return false;
+        }
+    return true;
+  
+}
+
+ 
+
+    
+function validate()
+{
+    
+    if(validateLastName() && Contact() && valipassword())
+    {
+        alert("You have registered to the site ");
+    }
+    else
+    {
+        event.preventDefault();
+    }
+    
+}
+    
+function validateLastName()
+{
+    var nickname = document.getElementById("lname").value;
+    if((nickname == "")|| (nickname == null))
+    {
+        alert("please enter your Nickname");
+        return false;
+    }
+    return true;
+    
+}
+    
+
+    
+function Contact()
+{
+    var contact = document.getElementById("txtContact").value;
+    
+    
+    if((length!=10)&&(isNaN(contact)))
+    {
+        alert("please enter a valid contact number");
+        return false;
+    }
+    return true;
+}}
+		
+	</script>
 </head>
 <body>
 <div class="container-fluid">
@@ -73,7 +137,7 @@
 			<h4 class="display-4">User Registration</h4>
 
 			<!-- Login Form -->
-			<form id="register" action="../NewUser" method="POST">
+			<form name="register" action="../NewUser" method="POST">
 				<div class="row">
 					<div class="col">
 						<label for="inputEmail4">Name</label>
@@ -85,7 +149,7 @@
 							placeholder="First name">
 					</div>
 					<div class="form-group col-md-6 col-sm-6">
-						<input type="text" class="form-control" name="lname"
+						<input type="text" class="form-control" name="lname" id="lname"
 							placeholder="Last name">
 					</div>
 				</div>
@@ -124,7 +188,7 @@
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12">
 						<label for="inputAddress">Phone</label> <input type="text"
-							class="form-control" id="inputPhone" name="phone"
+							class="form-control" id="txtContact" name="phone"
 							placeholder="0777123456">
 					</div>
 				</div>
@@ -147,7 +211,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<input type="submit" class="btn btn-primary btn-block w-100 bg-green"
-							value="Register" style="border:none;">
+							value="Register" style="border:none" onclick="validate()">
 					</div>
 
 					<br>
@@ -158,5 +222,6 @@
 			
 		</div>
 	</div>
+	
 </body>
 </html>

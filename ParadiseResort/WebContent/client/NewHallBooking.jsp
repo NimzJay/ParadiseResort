@@ -1,5 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="dbConnection.DBConn"%>
+
+<%
+	String driverName = "com.mysql.jdbc.Driver";
+	try {
+		System.out.println("Connected ");
+		Class.forName(driverName);
+	} catch (ClassNotFoundException ex) {
+		System.out.println("Error" + ex);
+		ex.printStackTrace();
+	}
+	Connection con = null;
+	Statement st = null;
+	ResultSet rs = null;
+%>
+<%@page import="servlets.Session"%>
+
+<%
+	String user = Session.getUser();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -51,8 +76,19 @@
 						<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
 							class="nav-link w-100" href="ViewAvailableHalls.jsp">Book
 								Halls</a></li>
-						<li class="nav-item px-lg-4 px-md-3 px-2"><a
+						<%
+							if ((user == null) || (user == "")) {
+						%>
+						<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
 							class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+						<%
+							} else {
+						%>
+						<li class="nav-item px-lg-4 px-md-3 px-2"><a
+							class="nav-link w-100" href="UserProfileBookingStatusPage.jsp"><%=user%></a></li>
+						<%
+							}
+						%>
 					</ul>
 				</div>
 			</div>

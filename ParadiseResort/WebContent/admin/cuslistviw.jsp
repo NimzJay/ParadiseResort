@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -6,7 +7,10 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="dbConnection.DBConn"%>
-
+<%@page import="servlets.Session"%>
+<%
+	String user = Session.getUser();
+%>
 <%
 	String driverName = "com.mysql.jdbc.Driver";
 	try {
@@ -35,11 +39,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer List View</title>
-<script type="text/javascript">
-	function delete(){
-		
-	}
-</script>
+
 </head>
 <body>
 	<div class="container-fluid">
@@ -77,8 +77,32 @@
 					<hr>
 					<div class="profile" style="width: 100%">
 						<img src="../img/User01.png" alt="profile_picture">
-						<h3>Anamika Roy</h3>
-						<p>Designer</p>
+						<%
+							user = Session.getUser();
+							String fname = null, sname = null, email = null, uname = null, tel = null;
+							try {
+								con = DBConn.getconn();
+								st = con.createStatement();
+								String sql1 = ("SELECT `uid`, `fname`, `lname`, `username`, `password`, `nic`, `email`, `contact`, `image`, `uType` FROM `user` WHERE `username` LIKE '"
+										+ user + "'");
+								rs = st.executeQuery(sql1);
+								while (rs.next()) {
+									uname = rs.getString("username");
+									tel = rs.getString("contact");
+									fname = rs.getString("fname");
+									sname = rs.getString("lname");
+									email = rs.getString("email");
+								}
+						%>
+						<h3><%=fname%></h3>
+						<p><%=email%></p>
+						<%
+							} catch (Exception e) {
+								System.out.println("Error     " + e);
+								e.printStackTrace();
+							}
+						%>
+
 					</div>
 				</div>
 
@@ -107,35 +131,33 @@
 										<th>Delete</th>
 									</tr>
 									<%
-															try{
-																con = DBConn.getconn();
-																st = con.createStatement();
-																String sql = ("SELECT `uid`,`fname`, `lname`, `username`, `password`, `nic`, `email`, `contact` FROM `user` WHERE `uType` LIKE 'C%'");
-																
-																
-																rs = st.executeQuery(sql);
-																while(rs.next()){
-																	
+										try {
+											con = DBConn.getconn();
+											st = con.createStatement();
+											String sql = ("SELECT `uid`,`fname`, `lname`, `username`, `password`, `nic`, `email`, `contact` FROM `user` WHERE `uType` LIKE 'C%'");
+
+											rs = st.executeQuery(sql);
+											while (rs.next()) {
 									%>
 									<tr>
 										<td class="booking"><%=rs.getInt(1)%></td>
 										<td class="booking"><%=rs.getString(2)%></td>
 										<td class="booking"><%=rs.getString(3)%></td>
-										<td class="booking"><%=rs.getString(4) %></td>
-										<td class="booking"><%=rs.getString(5) %></td>
-										<td class="booking"><%=rs.getString(6) %></td>
-										<td class="booking"><%=rs.getString(7) %></td>
-										<td class="booking"><%=rs.getInt(8) %></td>
-										<td class="booking"><a class="btn btn-danger" href='./userDelete.jsp?d=<%=rs.getInt(1)%>'>Delete</a></td>
+										<td class="booking"><%=rs.getString(4)%></td>
+										<td class="booking"><%=rs.getString(5)%></td>
+										<td class="booking"><%=rs.getString(6)%></td>
+										<td class="booking"><%=rs.getString(7)%></td>
+										<td class="booking"><%=rs.getInt(8)%></td>
+										<td class="booking"><a class="btn btn-danger"
+											href='./userDelete.jsp?d=<%=rs.getInt(1)%>'>Delete</a></td>
 									</tr>
-									<% 
-																}
-																
-															}catch(Exception e){
-																System.out.println("Error     "+e);
-																e.printStackTrace();
-															}
-																
+									<%
+										}
+
+										} catch (Exception e) {
+											System.out.println("Error     " + e);
+											e.printStackTrace();
+										}
 									%>
 								</table>
 							</div>

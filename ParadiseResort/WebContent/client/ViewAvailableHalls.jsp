@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -9,12 +9,14 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="dbConnection.DBConn"%>
-
+<%@page import="servlets.Session"%>
 <%
 	Statement st1, st2, st3, st4  = null;
 	ResultSet rs1, rs2, rs3, rs4  = null;
 %>
-
+<%
+String user=Session.getUser();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@
 </head>
 <body class="bg-halls">
 
-<%
+	<%
 		try {
 
 			int i = 0;
@@ -78,8 +80,19 @@
 					class="nav-link w-100" href="ViewAvailableRooms.jsp">Book Rooms</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
 					class="nav-link w-100" href="ViewAvailableHalls.jsp">Book Halls</a></li>
-				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+				<%
+					if((user==null)||(user=="")){
+					%>
+				<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
 					class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+				<%
+					}else{
+					%>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="UserProfileBookingStatusPage.jsp"><%=user %></a></li>
+				<%
+					}
+					%>
 			</ul>
 		</div>
 	</div>
@@ -109,45 +122,47 @@
 									<br>
 									<h3 class="card-title">Indoor Events</h3>
 									<hr>
-                                   
+
 									<p class="card-text">
 										Paradise Resort has the most extensive and versatile events
 										space in the country. Offers a range of flexible venues
 										including the Signature Ballroom, the largest pillar-less
 										ballroom in the region that can cater to seated banquets for
 										up to 1,440 guests. The property also consists of a Classic
-										Ballroom and a Lotus Ballroom catering to banquets up to 500 guests,
-										a large outdoor space and Spices, our dedicated function rooms. <br>
-										
-										<h5><I>Available Venues</I></h5>
-										<%
+										Ballroom and a Lotus Ballroom catering to banquets up to 500
+										guests, a large outdoor space and Spices, our dedicated
+										function rooms. <br>
+									<h5>
+										<I>Available Venues</I>
+									</h5>
+									<%
 										     while (rs1.next()) {
 									    %>
-										<span>Signature Ballroom : </span><%=rs1.getInt("count")%><br>
-										<%
+									<span>Signature Ballroom : </span><%=rs1.getInt("count")%><br>
+									<%
 										    }
 										%>
-										
-										<%
+
+									<%
 										     while (rs2.next()) {
 									    %>
-										<span>Classic Ballroom : </span><%=rs2.getInt("count")%><br>
-										<%
+									<span>Classic Ballroom : </span><%=rs2.getInt("count")%><br>
+									<%
 										    }
 										%>
-										<%
+									<%
 										     while (rs3.next()) {
 									    %>
-										<span>Lotus Ballroom : </span><%=rs3.getInt("count")%><br>
-										
-										<%
+									<span>Lotus Ballroom : </span><%=rs3.getInt("count")%><br>
+
+									<%
 										    }
 										%>
-										
-										<br> <b> For more details, please contact us. </b> <br>
-										<br> <i> Phone : (+94) 11 788 8267 <br> Email :
-											events.tb@paradiseresort.com
-										</i>
+
+									<br> <b> For more details, please contact us. </b> <br>
+									<br> <i> Phone : (+94) 11 788 8267 <br> Email :
+										events.tb@paradiseresort.com
+									</i>
 									<hr>
 									</p>
 									<a href="NewHallBooking.jsp" class="btn btn-primary">Book
@@ -177,7 +192,7 @@
 									<div class="card-body">
 										<h3 class="card-title">Outdoor Events</h3>
 										<hr>
-										 <%
+										<%
 										     while (rs4.next()) {
 									     %>
 										<p class="card-text">
@@ -186,15 +201,15 @@
 											Celebrate your special days with an unforgettable outdoor
 											event at Paradise Resort. From intimate ceremonies to grand
 											celebrations by the sea, we will help you plan a unique event
-											where you can enjoy your day to the fullest. <br> 
-											
-											<h5><I>Available Venues</I></h5>
-											 <span>Outdoor : </span><%=rs4.getInt("count")%><br><br>
-											
-											<b> For more details, please contact us. </b> <br> <br>
-											<i> Phone : (+94) 11 788 8267 <br> Email :
-												events.tb@paradiseresort.com
-											</i>
+											where you can enjoy your day to the fullest. <br>
+										<h5>
+											<I>Available Venues</I>
+										</h5>
+										<span>Outdoor : </span><%=rs4.getInt("count")%><br>
+										<br> <b> For more details, please contact us. </b> <br>
+										<br> <i> Phone : (+94) 11 788 8267 <br> Email :
+											events.tb@paradiseresort.com
+										</i>
 										<hr>
 										<%
 										    }

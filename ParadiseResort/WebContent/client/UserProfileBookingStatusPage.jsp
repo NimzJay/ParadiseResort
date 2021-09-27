@@ -9,6 +9,9 @@
 <%@page import="dbConnection.DBConn"%>
 <%@page import="servlets.Session"%>
 
+<%
+	String user = Session.getUser();
+%>
 
 <%
 	String driverName = "com.mysql.jdbc.Driver";
@@ -64,8 +67,19 @@
 					class="nav-link w-100" href="ViewAvailableRooms.jsp">Book Rooms</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="ViewAvailableHalls.jsp">Book Halls</a></li>
-				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+				<%
+					if ((user == null) || (user == "")) {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
 					class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+				<%
+					} else {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="UserProfileBookingStatusPage.jsp"><%=user%></a></li>
+				<%
+					}
+				%>
 			</ul>
 		</div>
 	</div>
@@ -87,16 +101,17 @@
 											class="rounded-circle" width="150">
 										<div class="mt-3">
 											<%
-												String user = Session.getUser();
-												String fname = null,sname = null,email = null,uname = null,tel = null;
+												user = Session.getUser();
+												String fname = null, sname = null, email = null, uname = null, tel = null;
 												try {
-													con = DBConn.getconn();																
+													con = DBConn.getconn();
 													st = con.createStatement();
 
-													String sql1 = ("SELECT `uid`, `fname`, `lname`, `username`, `password`, `nic`, `email`, `contact`, `image`, `uType` FROM `user` WHERE `username` LIKE '"+user+"'");
+													String sql1 = ("SELECT `uid`, `fname`, `lname`, `username`, `password`, `nic`, `email`, `contact`, `image`, `uType` FROM `user` WHERE `username` LIKE '"
+															+ user + "'");
 													//String sql2 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE ");																																			
 
-													rs= st.executeQuery(sql1);
+													rs = st.executeQuery(sql1);
 													//rs = st.executeQuery(sql2);									
 
 													while (rs.next()) {
@@ -104,15 +119,16 @@
 														tel = rs.getString("contact");
 														fname = rs.getString("fname");
 														sname = rs.getString("lname");
-														email=rs.getString("email");
+														email = rs.getString("email");
 													}
 											%>
-											<h4><%=uname %>
-												
+											<h4><%=uname%>
+
 											</h4>
 
-											<p class="text-muted font-size-sm"><%=email%> </p>
-											
+											<p class="text-muted font-size-sm"><%=email%>
+											</p>
+
 										</div>
 									</div>
 								</div>
@@ -128,21 +144,29 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col-sm-3">
-											<h6 class="mb-0">Full Name : <%=fname%>   <%=sname%> </h6>
+											<h6 class="mb-0">
+												Full Name :
+												<%=fname%>
+												<%=sname%>
+											</h6>
 										</div>
 										<div class="col-sm-9 text-secondary">&nbsp;&nbsp;</div>
 									</div>
 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
-											<h6 class="mb-0">Email : <%=email%></h6>
+											<h6 class="mb-0">
+												Email :
+												<%=email%></h6>
 										</div>
 										<div class="col-sm-9 text-secondary"></div>
 									</div>
 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
-											<h6 class="mb-0">Telephone : <%=tel%></h6>
+											<h6 class="mb-0">
+												Telephone :
+												<%=tel%></h6>
 										</div>
 										<div class="col-sm-9 text-secondary"></div>
 									</div>
@@ -194,53 +218,56 @@
 										<th>Type</th>
 									</tr>
 									<%
-												
-												try {
-													String unm=null;
-													con = DBConn.getconn();																
-													st = con.createStatement();
-													Statement st3 =con.createStatement();
-													String sql = ("SELECT `email` FROM `user` WHERE `username` LIKE '"+user+"'");
-													rs2= st3.executeQuery(sql);
-													
-													while(rs2.next()){
-														unm = rs2.getString(1);
-													}
-													
-													String sql1 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE `email` like '"+unm+"' ");	
-													rs = st.executeQuery(sql1);
-													while(rs.next()){
-														
-											%>
-											
-												<tr>
-													<td class="booking"><%=rs.getInt(1)%></td>
-													<td class="booking"><%=rs.getString(2)%></td>
-													<td class="booking"> <%=rs.getString(3) %></td>
-													<td class="booking"><%=rs.getString(4) %></td>
-													<td class="booking"><%=rs.getDate(5) %></td>
-													<td class="booking"><%=rs.getDate(6) %></td>
-													<td class="booking"><%=rs.getInt(7) %></td>
-													<td class="booking"><%=rs.getString(8) %></td>
-												</tr>
-											<% 
-													}
-													
-												}catch(Exception e){
-													System.out.println("Error     "+e);
-													e.printStackTrace();
-												}
-													
-											%>
+										try {
+											String unm = null;
+											con = DBConn.getconn();
+											st = con.createStatement();
+											Statement st3 = con.createStatement();
+											String sql = ("SELECT `email` FROM `user` WHERE `username` LIKE '" + user + "'");
+											rs2 = st3.executeQuery(sql);
+
+											while (rs2.next()) {
+												unm = rs2.getString(1);
+											}
+
+											String sql1 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE `email` like '"
+													+ unm + "' ");
+											rs = st.executeQuery(sql1);
+											while (rs.next()) {
+									%>
+
+									<tr>
+										<td class="booking"><%=rs.getInt(1)%></td>
+										<td class="booking"><%=rs.getString(2)%></td>
+										<td class="booking"><%=rs.getString(3)%></td>
+										<td class="booking"><%=rs.getString(4)%></td>
+										<td class="booking"><%=rs.getDate(5)%></td>
+										<td class="booking"><%=rs.getDate(6)%></td>
+										<td class="booking"><%=rs.getInt(7)%></td>
+										<td class="booking"><%=rs.getString(8)%></td>
+									</tr>
+									<%
+										}
+
+										} catch (Exception e) {
+											System.out.println("Error     " + e);
+											e.printStackTrace();
+										}
+									%>
 								</table>
 							</div>
 						</div>
-					</div><br><br><br>
+					</div>
+					<br>
+					<br>
+					<br>
 				</div>
 			</form>
 		</div>
 	</div>
-<br><br><br>
+	<br>
+	<br>
+	<br>
 	<!-- Footer -->
 	<div class="bg-blue text-white text-md-start">
 		<!-- Grid container -->

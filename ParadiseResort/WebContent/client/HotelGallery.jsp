@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="servlets.Session"%>
+
+<%
+	String user = Session.getUser();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -17,7 +22,8 @@
 
 </head>
 <body class="bg-gallery">
-	<nav id="nav" class="navbar affix fixed-top navbar-expand-sm sticky-top"
+	<nav id="nav"
+		class="navbar affix fixed-top navbar-expand-sm sticky-top"
 		data-spy="affix">
 	<div class="container h-100">
 		<a href="index.jsp" class="navbar-brand w-25"><img
@@ -38,8 +44,19 @@
 					class="nav-link w-100" href="ViewAvailableRooms.jsp">Book Rooms</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="ViewAvailableHalls.jsp">Book Halls</a></li>
+				<%
+					if ((user == null) || (user == "")) {
+				%>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+				<%
+					} else {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="UserProfileBookingStatusPage.jsp"><%=user%></a></li>
+				<%
+					}
+				%>
 			</ul>
 		</div>
 	</div>
@@ -192,8 +209,8 @@
 		</div>
 
 	</div>
-	
-	
+
+
 	<!-- Footer -->
 	<div class="bg-blue text-white text-md-start">
 		<!-- Grid container -->
@@ -246,19 +263,18 @@
 			<center>
 				<section class="mb-4 mt-4"> <!-- Facebook --> <a
 					id="social" class="btn btn-transparent btn-floating m-1" href="#!"
-					role="button"><i class="fab fa-facebook-f text-white h5" style="color: white;"></i></a> <!-- Twitter -->
-				<a id="social" class="btn btn-transparent btn-floating m-1"
-					href="#!" role="button"><i class="fab fa-twitter text-white h5"></i></a>
-				<!-- Google --> <a id="social"
+					role="button"><i class="fab fa-facebook-f text-white h5"
+					style="color: white;"></i></a> <!-- Twitter --> <a id="social"
 					class="btn btn-transparent btn-floating m-1" href="#!"
-					role="button"><i class="fab fa-google text-white h5"></i></a> <!-- Instagram -->
+					role="button"><i class="fab fa-twitter text-white h5"></i></a> <!-- Google -->
+				<a id="social" class="btn btn-transparent btn-floating m-1"
+					href="#!" role="button"><i class="fab fa-google text-white h5"></i></a>
+				<!-- Instagram --> <a id="social"
+					class="btn btn-transparent btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-instagram text-white h5"></i></a> <!-- Linkedin -->
 				<a id="social" class="btn btn-transparent btn-floating m-1"
 					href="#!" role="button"><i
-					class="fab fa-instagram text-white h5"></i></a> <!-- Linkedin --> <a
-					id="social" class="btn btn-transparent btn-floating m-1" href="#!"
-					role="button"><i class="fab fa-linkedin-in text-white h5"></i></a>
-
-				</section>
+					class="fab fa-linkedin-in text-white h5"></i></a> </section>
 			</center>
 			<!-- Section: Social media -->
 		</div>
@@ -270,6 +286,6 @@
 		</div>
 
 	</div>
-	
+
 </body>
 </html>

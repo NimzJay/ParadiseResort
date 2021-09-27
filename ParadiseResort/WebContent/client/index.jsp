@@ -21,10 +21,10 @@
 	Statement st = null;
 	ResultSet rs = null;
 %>
-<%@page import="servlets.Session" %>
+<%@page import="servlets.Session"%>
 
 <%
-String user=Session.getUser();
+	String user = Session.getUser();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -59,8 +59,8 @@ String user=Session.getUser();
 	<nav id="nav" class="navbar fixed-top navbar-expand-sm"
 		data-spy="affix">
 	<div class="container h-100">
-		<a href="index.jsp" class="navbar-brand w-25"><img src="../img/brand.png" width="60%" height="60%"
-				class="" alt="LOGO"></a>
+		<a href="index.jsp" class="navbar-brand w-25"><img
+			src="../img/brand.png" width="60%" height="60%" class="" alt="LOGO"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -78,21 +78,21 @@ String user=Session.getUser();
 					class="nav-link w-100" href="ViewAvailableRooms.jsp">Book Rooms</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="ViewAvailableHalls.jsp">Book Halls</a></li>
-					<%
-					if((user==null)||(user=="")){
-					%>
-						<li class="nav-item px-lg-4 px-md-3 px-2 active"><a
-								class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
-					<%
-					}else{
-					%>
-						<li class="nav-item px-lg-4 px-md-3 px-2"><a
-					class="nav-link w-100" href=""><%=user %></a></li>
-					<%
+				<%
+					if ((user == null) || (user == "")) {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="Signin.jsp">Sign in</a></li>
+				<%
+					} else {
+				%>
+				<li class="nav-item px-lg-4 px-md-3 px-2"><a
+					class="nav-link w-100" href="UserProfileBookingStatusPage.jsp"><%=user%></a></li>
+				<%
 					}
-					%>
-					
-				
+				%>
+
+
 			</ul>
 		</div>
 	</div>
@@ -158,7 +158,9 @@ String user=Session.getUser();
 	<section id="about" class="margin_100 padding_50">
 	<div class="container">
 		<div class="col-9 mx-auto">
-		<center><img src="../img/introC.png" alt="intro" class="w-50 h-50"></center>
+			<center>
+				<img src="../img/introC.png" alt="intro" class="w-50 h-50">
+			</center>
 			<!-- <h1>Paradise Resort Sri Lanka</h1> -->
 			<div class="hr"></div>
 			<p>Nestled between verdant rainforest and white-sand beaches on
