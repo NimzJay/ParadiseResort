@@ -56,15 +56,15 @@ public class RoomBooking extends HttpServlet {
 			Date ldate=Date.valueOf(request.getParameter("edate"));
 			int numofg = Integer.parseInt(request.getParameter("numofg"));
 			String room = request.getParameter("rad");
-			if(room.equals("Classic")) {
+			if(room.equals("Classic Room")) {
 				  price = 20000;
-			}else if(room.equals("Suite")){
+			}else if(room.equals("Suite Room")){
 				  price = 25000;
-			}else if(room.equals("Family")){
+			}else if(room.equals("Family Room")){
 				 price = 30000;
-			}else if(room.equals("Deluxe")) {
+			}else if(room.equals("Deluxe Room")) {
 				price = 50000;	
-			}else if(room.equals("Superior")) {
+			}else if(room.equals("Superior Room")) {
 				price = 70000;
 			}else {
 				price = 100000;
@@ -76,6 +76,7 @@ public class RoomBooking extends HttpServlet {
 			st.executeUpdate(sql);
 			System.out.println("Room Booked Successfully");
 //			request.getRequestDispatcher("../client/UserProfileBookingStatusPage.jsp").forward(request, response);
+			response.sendRedirect("client/UserProfileBookingStatusPage.jsp");
 			con.close();
 			
 		}catch (Exception e) {

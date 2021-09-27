@@ -205,11 +205,11 @@
 								<h4>
 									<b>Booking List</b>
 								</h4>
-								<p>Here are the all booking details.</p>
+								<p>Here are all the booking details.</p>
 								<table>
 									<tr>
 										<th>ID</th>
-										<th>Fisrt Name</th>
+										<th>First Name</th>
 										<th>Email</th>
 										<th>Tel</th>
 										<th>Checkin</th>

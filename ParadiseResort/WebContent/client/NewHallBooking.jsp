@@ -160,20 +160,20 @@
 
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
-								value="Hall 1" id="Radio1"> <label
+								value="Signature Ballroom" id="Radio1"> <label
 								class="form-check-label" for="flexRadioDefault1">
 								Signature Ballroom - Rs: 700,000/= </label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
-								value="Hall 2" id="Radio2" checked> <label
+								value="Classic Ballroom" id="Radio2" checked> <label
 								class="form-check-label" for="flexRadioDefault2">
 								Classic Ballroom - Rs: 300,000/= </label>
 						</div>
 
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
-								value="Hall 3" id="Radio3" checked> <label
+								value="Lotus Ballroom" id="Radio3" checked> <label
 								class="form-check-label" for="flexRadioDefault3"> Lotus
 								Ballroom - Rs: 250,000/= </label>
 						</div>
