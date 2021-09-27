@@ -20,8 +20,8 @@
 		ex.printStackTrace();
 	}
 	Connection con = null;
-	Statement st,st2 = null;
-	ResultSet rs,rs2 = null;
+	Statement st, st2 = null;
+	ResultSet rs, rs2 = null;
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -77,6 +77,7 @@
 
 					<h1 style="text-align: center;" class="my-5">Booking Status</h1>
 					<br>
+
 					<div class="row gutters-sm">
 						<div class="col-md-4 mb-3">
 							<div class="card">
@@ -85,32 +86,39 @@
 										<img src="../img/User01.png" alt="Admin"
 											class="rounded-circle" width="150">
 										<div class="mt-3">
-											<h4>John Doe</h4>
+											<%
+												String user = Session.getUser();
+												String fname = null,sname = null,email = null,uname = null,tel = null;
+												try {
+													con = DBConn.getconn();																
+													st = con.createStatement();
 
-											<p class="text-muted font-size-sm">Bay Area, San
-												Francisco, CA</p>
+													String sql1 = ("SELECT `uid`, `fname`, `lname`, `username`, `password`, `nic`, `email`, `contact`, `image`, `uType` FROM `user` WHERE `username` LIKE '"+user+"'");
+													//String sql2 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE ");																																			
 
+													rs= st.executeQuery(sql1);
+													//rs = st.executeQuery(sql2);									
+
+													while (rs.next()) {
+														uname = rs.getString("username");
+														tel = rs.getString("contact");
+														fname = rs.getString("fname");
+														sname = rs.getString("lname");
+														email=rs.getString("email");
+													}
+											%>
+											<h4><%=uname %>
+												
+											</h4>
+
+											<p class="text-muted font-size-sm"><%=email%> </p>
+											
 										</div>
 									</div>
 								</div>
 
 							</div>
-							<%
-									try{
-										con = DBConn.getconn();
-										st = con.createStatement();
-										
-										String user = Session.getUser();
-										
-										String sql1 = ("SELECT * FROM `user` WHERE username='"+user+"'");																									
-										String sql2 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE ");																																			
-										
-										rs2 = st2.executeQuery(sql1);
-										rs = st.executeQuery(sql2);									
-																				
-										while(rs2.next()){
-																	
-							%>
+
 
 
 						</div>
@@ -120,35 +128,39 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col-sm-3">
-											<h6 class="mb-0">Full Name</h6>
+											<h6 class="mb-0">Full Name : <%=fname%>   <%=sname%> </h6>
 										</div>
-										<div class="col-sm-9 text-secondary"><%=rs2.getString("fname")%>&nbsp;&nbsp;<%=rs2.getString("lname")%></div>
+										<div class="col-sm-9 text-secondary">&nbsp;&nbsp;</div>
 									</div>
 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
-											<h6 class="mb-0">Email</h6>
+											<h6 class="mb-0">Email : <%=email%></h6>
 										</div>
-										<div class="col-sm-9 text-secondary"><%=rs2.getString("email")%></div>
+										<div class="col-sm-9 text-secondary"></div>
 									</div>
 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
-											<h6 class="mb-0">Phone</h6>
+											<h6 class="mb-0">Telephone : <%=tel%></h6>
 										</div>
-										<div class="col-sm-9 text-secondary"><%=rs2.getInt("contact")%></div>
+										<div class="col-sm-9 text-secondary"></div>
 									</div>
-									<hr>
 									<%
-										} 
-										%>
-<!-- 									<div class="row">
+										} catch (Exception e) {
+											System.out.println("Error     " + e);
+											e.printStackTrace();
+										}
+									%>
+									<hr>
+
+									<!-- 									<div class="row">
 										<div class="col-sm-3">
 											<h6 class="mb-0">Mobile</h6>
 										</div>
 										<div class="col-sm-9 text-secondary">(320) 380-4539</div>
 									</div> -->
-<!-- 									<hr>
+									<!-- 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
 											<h6 class="mb-0">Address</h6>
@@ -181,40 +193,54 @@
 										<th>Guests</th>
 										<th>Type</th>
 									</tr>
-
-									<tr>
 									<%
-										
-										while(rs.next()){
-							
-									%>
-										<td class="booking"><%=rs.getInt(1)%></td>
-										<td class="booking"><%=rs.getString(2)%></td>
-										<td class="booking"><%=rs.getString(3) %></td>
-										<td class="booking"><%=rs.getString(4) %></td>
-										<td class="booking"><%=rs.getDate(5) %></td>
-										<td class="booking"><%=rs.getDate(6) %></td>
-										<td class="booking"><%=rs.getInt(7) %></td>
-										<td class="booking"><%=rs.getString(8) %></td>
-									</tr>
-									<% 
-																}
-																
-															}catch(Exception e){
-																System.out.println("Error     "+e);
-																e.printStackTrace();
-															}
-																
-														%>
+												
+												try {
+													String unm=null;
+													con = DBConn.getconn();																
+													st = con.createStatement();
+													Statement st3 =con.createStatement();
+													String sql = ("SELECT `email` FROM `user` WHERE `username` LIKE '"+user+"'");
+													rs2= st3.executeQuery(sql);
+													
+													while(rs2.next()){
+														unm = rs2.getString(1);
+													}
+													
+													String sql1 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE `email` like '"+unm+"' ");	
+													rs = st.executeQuery(sql1);
+													while(rs.next()){
+														
+											%>
+											
+												<tr>
+													<td class="booking"><%=rs.getInt(1)%></td>
+													<td class="booking"><%=rs.getString(2)%></td>
+													<td class="booking"> <%=rs.getString(3) %></td>
+													<td class="booking"><%=rs.getString(4) %></td>
+													<td class="booking"><%=rs.getDate(5) %></td>
+													<td class="booking"><%=rs.getDate(6) %></td>
+													<td class="booking"><%=rs.getInt(7) %></td>
+													<td class="booking"><%=rs.getString(8) %></td>
+												</tr>
+											<% 
+													}
+													
+												}catch(Exception e){
+													System.out.println("Error     "+e);
+													e.printStackTrace();
+												}
+													
+											%>
 								</table>
 							</div>
 						</div>
-					</div>
+					</div><br><br><br>
 				</div>
 			</form>
 		</div>
 	</div>
-
+<br><br><br>
 	<!-- Footer -->
 	<div class="bg-blue text-white text-md-start">
 		<!-- Grid container -->
