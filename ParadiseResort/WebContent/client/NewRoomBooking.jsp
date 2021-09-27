@@ -357,7 +357,7 @@ function Contact()
 	var contact = document.getElementById("valContact").value;
 	
 	
-	if((contact!=10)&&(isNaN(contact)))
+	if((contact.length!=10)||(isNaN(contact)))
 	{
 		alert("Please enter a valid contact number");
 		return false;
