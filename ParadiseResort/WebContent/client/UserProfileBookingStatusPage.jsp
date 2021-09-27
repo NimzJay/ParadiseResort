@@ -102,10 +102,10 @@
 										
 										String user = Session.getUser();
 										
-										String sql1 = ("SELECT `fname`, `lname`, `email`,`contact` FROM `user` WHERE username='"+user+"'");																									
-										String sql2 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking`");																																			
+										String sql1 = ("SELECT * FROM `user` WHERE username='"+user+"'");																									
+										String sql2 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking` WHERE ");																																			
 										
-										rs2 = st.executeQuery(sql1);
+										rs2 = st2.executeQuery(sql1);
 										rs = st.executeQuery(sql2);									
 																				
 										while(rs2.next()){

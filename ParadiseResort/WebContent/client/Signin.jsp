@@ -34,8 +34,8 @@
 	<nav id="nav" class="navbar affix fixed-top navbar-expand-sm"
 		data-spy="affix">
 	<div class="container h-100">
-		<a href="index.jsp" class="navbar-brand w-25"><img src="../img/brand.png" width="60%" height="60%"
-				class="" alt="LOGO"></a>
+		<a href="index.jsp" class="navbar-brand w-25"><img
+			src="../img/brand.png" width="60%" height="60%" class="" alt="LOGO"></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -44,9 +44,8 @@
 		<div class="d-flex collapse navbar-collapse justify-content-end h-100"
 			id="navbarNav">
 			<ul class="navbar-nav h-100 align-items-center">
-				<li class="nav-item px-lg-4 px-md-3"><a
-					class="nav-link w-100" aria-current="page" href="index.jsp">Home</a>
-				</li>
+				<li class="nav-item px-lg-4 px-md-3"><a class="nav-link w-100"
+					aria-current="page" href="index.jsp">Home</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
 					class="nav-link w-100" href="HotelGallery.jsp">Gallery</a></li>
 				<li class="nav-item px-lg-4 px-md-3 px-2"><a
@@ -70,21 +69,22 @@
 					class="vh-100 d-flex align-items-center h-custom-2 px-5 mx-5 mt-md-5 pt-md-5 mt-sm-5 pt-sm-5"
 					style="border-radius: 30px;">
 
-					<form style="width: 30rem;" name="loginForm" action="../Signin" method="post" onclick="return validateLogin()">
+					<form style="width: 30rem;" name="loginForm" action="../Signin"
+						method="post">
 
 						<h2 class="fw-normal mb-3 pb-3 h1" style="letter-spacing: 1px;">Sign
 							in</h2>
 
-						<div id="username" class="form-outline mb-4">
+						<div class="form-outline mb-4">
 							<label class="form-label" for="form2Example17">Username</label> <input
 								type="text" name="user" id="form2Example17"
-								class="form-control form-control-lg" required/>
+								class="form-control form-control-lg" required />
 						</div>
 
-						<div id="password" class="form-outline mb-4">
+						<div class="form-outline mb-4">
 							<label class="form-label" for="form2Example27">Password</label> <input
 								type="password" name="pass" id="form2Example27"
-								class="form-control form-control-lg" required/>
+								class="form-control form-control-lg" required />
 						</div>
 
 						<div class="row pt-1 mb-4">
@@ -100,8 +100,9 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</section>
-	
+
 	<!-- Footer -->
 	<div class="bg-blue text-white text-md-start">
 		<!-- Grid container -->

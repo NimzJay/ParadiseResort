@@ -1,6 +1,6 @@
 package servlets;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -64,11 +64,13 @@ public class Signin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
-		
+
 		PrintWriter out = response.getWriter();
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 		System.out.println(user + pass);
+		Session.setUser(user);
+		System.out.println(Session.getUser());
 
 		loginDao dao = new loginDao();
 
@@ -77,19 +79,15 @@ public class Signin extends HttpServlet {
 			String userValidate = dao.check(user, pass);
 			if (userValidate.equals("clientUI")) {
 				System.out.println("Redirected to Client UI");
-				// request.getRequestDispatcher("client/index.jsp").forward(request, response);
-				Session.setUser(user);
 				response.sendRedirect("client/index.jsp");
-				
+
 			} else if (userValidate.equals("adminUI")) {
 				System.out.println("Redirected to Admin UI");
-				// request.getRequestDispatcher("admin/dashboard.jsp").forward(request,response);
-				Session.setUser(user);
 				response.sendRedirect("admin/dashboard.jsp");
 			} else {
 				// request.getRequestDispatcher("client/Signin.jsp").forward(request, response);
 				response.sendRedirect("client/Signin.jsp");
-				
+
 			}
 
 		} catch (Exception e) {
