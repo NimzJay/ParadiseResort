@@ -1,6 +1,6 @@
 package servlets;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import dbConnection.DBConn;
+import servlets.Session;
 
 /**
  * Servlet implementation class Signin
@@ -77,18 +78,16 @@ public class Signin extends HttpServlet {
 			if (userValidate.equals("clientUI")) {
 				System.out.println("Redirected to Client UI");
 				// request.getRequestDispatcher("client/index.jsp").forward(request, response);
+				Session.setUser(user);
 				response.sendRedirect("client/index.jsp");
+				
 			} else if (userValidate.equals("adminUI")) {
 				System.out.println("Redirected to Admin UI");
-				// request.getRequestDispatcher("admin/dashboard.jsp").forward(request,
-				// response);
+				// request.getRequestDispatcher("admin/dashboard.jsp").forward(request,response);
+				Session.setUser(user);
 				response.sendRedirect("admin/dashboard.jsp");
 			} else {
 				// request.getRequestDispatcher("client/Signin.jsp").forward(request, response);
-				out.println("<script type=\"text/javascript\">");
-				out.println("alert('User or password incorrect');");
-				out.println("location='index.jsp';");
-				out.println("</script>");
 				response.sendRedirect("client/Signin.jsp");
 				
 			}
