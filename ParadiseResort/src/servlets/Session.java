@@ -9,7 +9,8 @@ public class Session {
 	}
 
 	public static void setUser(String user) {
-		Session.user = user;
+//		Session.user = user;
+		Session.user = "nimz";
 	}
 
 }

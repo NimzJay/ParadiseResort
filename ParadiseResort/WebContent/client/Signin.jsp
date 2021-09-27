@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="../css/nim.css" />
 <link rel="stylesheet" href="../css/navbar.css" />
 <script src="../js/navbar2.js"></script>
+<script src="../js/validation-nimna.js"></script>
 
 <title>Signin | Paradise Resort</title>
 </head>
@@ -60,20 +61,6 @@
 	</nav>
 	<!-- /.navbar -->
 
-	<!-- <section class="first margin_100">
-       <div class="container-fluid">
-           <div class="row">
-               <div class="col-lg-6 col-md-7 col-sm-12 col-12">
-                    
-               </div>
-               <div class="col-lg-6 col-md-7 col-sm-12 col-12">
-
-            </div>
-
-           </div>
-       </div>
-    </section> -->
-
 	<section class="vh-100 bg-sign" style="overflow-y: hidden;">
 	<div class="container-fluid ">
 		<div class="row">
@@ -83,18 +70,18 @@
 					class="vh-100 d-flex align-items-center h-custom-2 px-5 mx-5 mt-md-5 pt-md-5 mt-sm-5 pt-sm-5"
 					style="border-radius: 30px;">
 
-					<form style="width: 30rem;" action="../Signin" method="post">
+					<form style="width: 30rem;" name="loginForm" action="../Signin" method="post" onclick="return validateLogin()">
 
 						<h2 class="fw-normal mb-3 pb-3 h1" style="letter-spacing: 1px;">Sign
 							in</h2>
 
-						<div class="form-outline mb-4">
+						<div id="username" class="form-outline mb-4">
 							<label class="form-label" for="form2Example17">Username</label> <input
 								type="text" name="user" id="form2Example17"
 								class="form-control form-control-lg" required/>
 						</div>
 
-						<div class="form-outline mb-4">
+						<div id="password" class="form-outline mb-4">
 							<label class="form-label" for="form2Example27">Password</label> <input
 								type="password" name="pass" id="form2Example27"
 								class="form-control form-control-lg" required/>

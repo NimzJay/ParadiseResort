@@ -95,7 +95,22 @@
 								</div>
 
 							</div>
-
+							<%
+									try{
+										con = DBConn.getconn();
+										st = con.createStatement();
+										
+										String user = Session.getUser();
+										
+										String sql1 = ("SELECT `fname`, `lname`, `email`,`contact` FROM `user` WHERE username='"+user+"'");																									
+										String sql2 = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking`");																																			
+										
+										rs2 = st.executeQuery(sql1);
+										rs = st.executeQuery(sql2);									
+																				
+										while(rs2.next()){
+																	
+							%>
 
 
 						</div>
@@ -107,43 +122,44 @@
 										<div class="col-sm-3">
 											<h6 class="mb-0">Full Name</h6>
 										</div>
-										<div class="col-sm-9 text-secondary">Kenneth Valdez</div>
+										<div class="col-sm-9 text-secondary"><%=rs2.getString("fname")%>&nbsp;&nbsp;<%=rs2.getString("lname")%></div>
 									</div>
 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
 											<h6 class="mb-0">Email</h6>
 										</div>
-										<div class="col-sm-9 text-secondary">fip@jukmuh.al</div>
+										<div class="col-sm-9 text-secondary"><%=rs2.getString("email")%></div>
 									</div>
 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
 											<h6 class="mb-0">Phone</h6>
 										</div>
-										<div class="col-sm-9 text-secondary">(239) 816-9029</div>
+										<div class="col-sm-9 text-secondary"><%=rs2.getInt("contact")%></div>
 									</div>
 									<hr>
-									<div class="row">
+									<%
+										} 
+										%>
+<!-- 									<div class="row">
 										<div class="col-sm-3">
 											<h6 class="mb-0">Mobile</h6>
 										</div>
 										<div class="col-sm-9 text-secondary">(320) 380-4539</div>
-									</div>
-									<hr>
+									</div> -->
+<!-- 									<hr>
 									<div class="row">
 										<div class="col-sm-3">
 											<h6 class="mb-0">Address</h6>
 										</div>
 										<div class="col-sm-9 text-secondary">Bay Area, San
 											Francisco, CA</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 
 						</div>
-
-
 
 					</div>
 
@@ -165,18 +181,13 @@
 										<th>Guests</th>
 										<th>Type</th>
 									</tr>
-									<%
-															try{
-																con = DBConn.getconn();
-																st = con.createStatement();
-																String sql = ("SELECT `bid`, `firstname`,`email`, `tel`, `checkin`, `checkout`, `guests`, `type` FROM `booking`");
-																
-																
-																rs = st.executeQuery(sql);
-																while(rs.next()){
-																	
-														%>
+
 									<tr>
+									<%
+										
+										while(rs.next()){
+							
+									%>
 										<td class="booking"><%=rs.getInt(1)%></td>
 										<td class="booking"><%=rs.getString(2)%></td>
 										<td class="booking"><%=rs.getString(3) %></td>
