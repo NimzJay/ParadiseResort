@@ -52,11 +52,11 @@ public class HallBooking extends HttpServlet {
 			Date ldate=Date.valueOf(request.getParameter("edate"));
 			int numofg = Integer.parseInt(request.getParameter("numofg"));
 			String hall = request.getParameter("rad");
-			 if(hall.equals("Hall 1")) {
+			 if(hall.equals("Signature Ballroom")) {
 				  price = 700000;
-			 }else if(hall.equals("Hall 2")){
+			 }else if(hall.equals("Classic Ballroom")){
 				  price = 300000;
-			}else if(hall.equals("Hall 3")){
+			}else if(hall.equals("Lotus Ballroom")){
 				 price = 250000;
 			}else {
 				price = 350000;
