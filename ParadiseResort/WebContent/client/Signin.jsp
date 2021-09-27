@@ -77,14 +77,14 @@
 
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form2Example17">Username</label> <input
-								type="text" name="user" id="form2Example17"
+								type="text" name="user" id="user"
 								class="form-control form-control-lg"  />
 								<div id="username"></div>
 						</div>
 
 						<div class="form-outline mb-4">
 							<label class="form-label" for="form2Example27">Password</label> <input
-								type="password" name="pass" id="form2Example27"
+								type="password" name="pass" id="pass"
 								class="form-control form-control-lg"  />
 								<div id="password"></div>
 						</div>
@@ -92,7 +92,7 @@
 						<div class="row pt-1 mb-4">
 							<div class="pr col-12">
 								<button class=" w-100 btn btn-info btn-lg btn-block"
-									type="submit" onclick="validateLogin()">Signin</button>
+									type="submit" onclick="loginValidate()">Signin</button>
 							</div>
 
 						</div>

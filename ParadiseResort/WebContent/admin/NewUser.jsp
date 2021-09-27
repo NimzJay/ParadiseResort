@@ -28,69 +28,8 @@
 
 <title>New User | Paradise Resort</title>
 
-<script type="text/javascript">
+<script src="../js/validation-nimna.js"></script>
 
-
-
-function valipassword()
-{
-    var pw = document.getElementById("pass").value;
-    var cpw = document.getElementById("repass").value;
-  
-    if((pw.length < 5)&&(pw != cpw))
-        {
-            alert("please re enter the password");
-            return false;
-        }
-    return true;
-  
-}
-
- 
-
-    
-function validate()
-{
-    
-    if(validateLastName() && Contact() && valipassword())
-    {
-        alert("You have registered to the site ");
-    }
-    else
-    {
-        event.preventDefault();
-    }
-    
-}
-    
-function validateLastName()
-{
-    var nickname = document.getElementById("lname").value;
-    if((nickname == "")|| (nickname == null))
-    {
-        alert("please enter your Nickname");
-        return false;
-    }
-    return true;
-    
-}
-    
-
-    
-function Contact()
-{
-    var contact = document.getElementById("txtContact").value;
-    
-    
-    if((length!=10)&&(isNaN(contact)))
-    {
-        alert("please enter a valid contact number");
-        return false;
-    }
-    return true;
-}}
-		
-	</script>
 </head>
 <body>
 <div class="container-fluid">
@@ -146,61 +85,69 @@ function Contact()
 				<div class="row mb-3">
 					<div class="form-group col-md-6 col-sm-6">
 						<input type="text" class="form-control" name="fname"
-							placeholder="First name">
+							placeholder="First name" id="fname" required>
+							<div id="first"></div>
 					</div>
 					<div class="form-group col-md-6 col-sm-6">
 						<input type="text" class="form-control" name="lname" id="lname"
-							placeholder="Last name">
+							placeholder="Last name" id="lname" required>
+							<div id="last"></div>
 					</div>
 				</div>
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12 mb-2">
 						<label for="inputEmail4">Username</label> <input type="text"
-							class="form-control" name="user">
+							class="form-control" name="user" id="user" required>
+							<div id="username"></div>
 					</div>
 				</div>
 				<div class="form-row mb-2">
 					<div class="form-group col-md-12">
 						<label for="inputPassword4">Password</label> <input
 							type="password" class="form-control" id="pass"
-							placeholder="Password" name="pass">
+							placeholder="Password" name="pass" required>
+							<div id="password"></div>
 					</div>
 				</div>
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12">
 						<input type="password" class="form-control" id="repass"
-							placeholder="Confirm Password" name="repass">
+							placeholder="Confirm Password" name="repass" required>
+							<div id="repassword"></div>
 					</div>
 				</div>
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12">
 						<label for="inputAddress">NIC</label> <input type="text"
-							class="form-control" id="nic" placeholder="987654321V" name="nic">
+							class="form-control" id="nic" placeholder="987654321V" name="nic" required>
+							<div id="national"></div>
 					</div>
 				</div>
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12">
 						<label for="inputAddress">Email</label> <input type="email"
-							class="form-control" id="inputEmail"
-							placeholder="johndoe@example.com" name="email">
+							class="form-control" placeholder="johndoe@example.com" name="email" id="email" required>
+							<div id="emailAlert"></div>
 					</div>
 				</div>
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12">
 						<label for="inputAddress">Phone</label> <input type="text"
-							class="form-control" id="txtContact" name="phone"
-							placeholder="0777123456">
+							class="form-control" id="phone" name="phone"
+							placeholder="0777123456" required>
+							<div id="contact"></div>
 					</div>
 				</div>
 				<div class="form-row mb-3">
 					<div class="form-group col-md-12">
 						<label for="inputAddress">User Type</label><select
 							class="form-select" aria-label="Default select example"
-							name="type">
-							<option selected>Select User Type</option>
+							name="type" id="type" required>
+							<option value="null" selected>Select User Type</option>
 							<option value="client">Client</option>
 							<option value="admin">Admin</option>
 						</select>
+						<div id="typeAlert"></div>
 					</div>
 				</div>
 
@@ -211,7 +158,7 @@ function Contact()
 					</div>
 					<div class="form-group col-md-6">
 						<input type="submit" class="btn btn-primary btn-block w-100 bg-green"
-							value="Register" style="border:none" onclick="validate()">
+							value="Register" style="border:none" onclick="registerValidate()">
 					</div>
 
 					<br>
