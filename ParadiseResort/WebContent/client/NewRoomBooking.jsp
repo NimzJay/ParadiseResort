@@ -127,7 +127,8 @@
 						<div class="form-group">
 							<label for="validationCustom05" class="form-label">Check-In
 								Date</label> <input type="date" name="sdate" class="form-control"
-								id="validationCustom05" placeholder="mm/dd/yyyy" required>
+								id="valCheckInDate" placeholder="mm/dd/yyyy" required>
+								 <div id="checkInDate"></div>
  
 							<br>
 						</div>
@@ -135,7 +136,8 @@
 						<div class="form-group">
 							<label for="validationCustom06">Check-Out Date</label> <input
 								type="date" name="edate" class="form-control"
-								id="validationCustom06" placeholder="mm/dd/yyyy" required>
+								id="valCheckOutDate" placeholder="mm/dd/yyyy" required>
+								 <div id="checkOutDate"></div>
  
 							<br>
 						</div>
@@ -143,7 +145,9 @@
 						<div class="form-group">
 							<label for="validationCustom07">Number of Guests</label> <input
 								type="number" name="numofg" class="form-control"
-								id="validationCustom07" placeholder="Number of Guests" required>
+								id="valGuests" placeholder="Number of Guests" required>
+								
+								 <div id="guests"></div>
  
 
 						</div>
@@ -189,6 +193,8 @@
 							    Luxury Room - Rs. 100,000/= 
 							</label>
 						</div>
+						  <div id="roomType"></div>
+ 
 
 						<br>
 
