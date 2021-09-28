@@ -123,7 +123,7 @@ function validateEmail() {
 	if ((email == null) || (email == "")) {
 		document.getElementById("emailAlert").innerHTML = "Enter Email!";
 		document.getElementById("emailAlert").style.color = "red";
-		document.getElementById("inputEmail").style.border = "1px solid red";
+		document.getElementById("email").style.border = "1px solid red";
 		return false;
 
 	} else if ((at < 1) || (dot - at < 2) || (len - dot < 3)) {
