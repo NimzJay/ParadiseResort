@@ -53,7 +53,7 @@ function validateName()
 	var name = document.getElementById("txtuserName1").value;
 	if((name == "") || (name == null))
 	{
-		alert("please enter your first name");
+		alert("please enter your first name.");
 		return false;
 	}
 	return true;
@@ -63,9 +63,9 @@ function validateName()
 function validate()
 {
 	
-	if(validateName() && validateLastName() && validateEmail() && Contact())
+	if(validateName() && validateLastName() && validateEmail() && Contact() && CheckInDate() && CheckOutDate() && NoOfGust() && validateSelectHall())
 	{
-		alert("you have registered to the site ");
+		//alert("you have registered to the site.");
 	}
 	else
 	{
@@ -79,7 +79,7 @@ function validateLastName()
 	var nickname = document.getElementById("txtuserName2").value;
 	if((nickname == "")|| (nickname == null))
 	{
-		alert("please enter your last name");
+		alert("please enter your last name.");
 		return false;
 	}
 	return true;
@@ -95,7 +95,7 @@ function validateEmail()
 		
 		if((at<1)||(dot-at<2)||(len-dot <3))
 		{
-			alert("please enter a valid email");
+			alert("please enter a valid email.");
 			return false;
 		}
 		return true;
@@ -108,47 +108,74 @@ function Contact()
 	
 	if((contact.length!=10)||(isNaN(contact)))
 	{
-		alert("please enter a valid contact number");
+		alert("please enter a valid contact number.");
 		return false;
 	}
 	return true;
 }
 
+function CheckInDate(){
+	var checkIn = document.getElementById("txtCheckInDate").value;
+	
+	if((checkIn == "")|| (checkIn == null)){
+		alert("please enter check-in date.");
+		return false;
+	}
+	return true;
+}
 
+function CheckOutDate(){
+	var checkOut = document.getElementById("txtCheckOutDate").value;
 	
-//  function validatePassword()
-//  {
-//  	var pw = document.getElementById("txtPassword").value;
-//  	var cpw = document.getElementById("txtConfirmPassword").value;
-	
-//  	if((pw.length < 5)&&(pw != cpw))
-//  		{
-//  			alert("please re enter the password");
-//  			return false;
-//  		}
-//  	return true;
-	
-//  }
+	if((checkOut == "")|| (checkOut == null)){
+		alert("please enter check-out date.");
+		return false;
+	}
+	return true;
+}
 
-// function validateStudNo()
-// {
-// 		var studNo = document.getElementById("txtStudNo").value;
-// 		var R = studNo.indexOf("R");
-// 		var E = studNo.indexOf("E");
-// 		var G = studNo.indexOf("G");
+function NoOfGust(){
+	var gust = document.getElementById("txtguests").value;
+	
+	if((gust == "")|| (gust == null)){
+		alert("please enter number of guests.");
+		return false;
+	}
+	return true;
+}
+
+function validateSelectHall() {  
+    if(document.getElementById('Radio1').checked) { 
+    	document.getElementById("roomType").innerHTML = "";
+		 
+		return true;
+        
+    }else if(document.getElementById('Radio2').checked) { 
+    	document.getElementById("roomType").innerHTML = "";
+		 
+		return true;
+        
+    }else if(document.getElementById('Radio3').checked) { 
+    	document.getElementById("roomType").innerHTML = "";
+		 
+		return true;
 		
-// 		if((R!=0)&&(E!=1)&&(G!=2)&&(studNo.length!=6))
-// 		{
-// 			alert("please enter a valid registration number");
-// 			return false;
-// 		}
-// 		return true;
-// }
+    }else if(document.getElementById('Radio4').checked) { 
+    	document.getElementById("roomType").innerHTML = "";
+		 
+		return true;  
+        
+    }else { 
+    	document.getElementById("roomType").innerHTML = "Please Select a Room!";
+		document.getElementById("roomType").style.color = "red";
+		return false;
+    } 
+} 
+
+
 
 </script>
 
-
-</script>
 	
 </head>
 <body class="bg-hallbooking">
@@ -243,14 +270,14 @@ function Contact()
 							<label for="date"> <span class="glyphicon"></span>
 								Check-in Date
 							</label> <input type="date" name="sdate" class="form-control"
-								id="txtdate" required>
+								id="txtCheckInDate" required>
 						</div>
 
 						<div class="form-group">
 							<label for="date"> <span class="glyphicon"></span>
 								Check-out Date
 							</label> <input type="date" name="edate" class="form-control"
-								id="txtdate" required>
+								id="txtCheckOutDate" required>
 						</div>
 
 						<div class="form-group">
@@ -262,6 +289,8 @@ function Contact()
 
 						<br>
 						<p style="font-weight: bold;">Please select a hall</p>
+						
+						
 
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="rad"
@@ -289,6 +318,8 @@ function Contact()
 								class="form-check-label" for="flexRadioDefault4">
 								Outdoor - Rs: 350,000/= </label>
 						</div>
+						
+						<div id="roomType"></div>
 
 						<hr>
 
