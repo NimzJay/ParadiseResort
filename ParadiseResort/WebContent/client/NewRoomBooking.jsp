@@ -21,6 +21,8 @@
 <script src="../other/jquery-3.6.0.min.js"></script>
 <script src="../other/js/bootstrap.min.js"></script>
 
+<script src="../js/validation-sasmini.js"></script>
+
 </head>
 
 <body class="bg-booking">
@@ -89,8 +91,7 @@
 							<label for="validationCustom01" class="form-label">First
 								Name</label> <input type="text" name="fname" class="form-control"
 								id="valFirstName" placeholder="First Name" required>
-
-							<div class="invalid-feedback">Please enter your First Name.</div>
+								<div id="firstName"></div>
 
 							<br>
 						</div>
@@ -99,8 +100,8 @@
 							<label for="validationCustom02" class="form-label">Last
 								Name</label> <input type="text" name="lname" class="form-control"
 								id="valLastName" placeholder="Last Name" required>
-
-							<div class="invalid-feedback">Please enter your Last Name.</div>
+                                <div id="lastName"></div>
+							 
 
 							<br>
 						</div>
@@ -109,10 +110,8 @@
 							<label for="validationCustom03" class="form-label">Email
 								Address</label> <input type="text" name="email" class="form-control"
 								id="valEmail" placeholder="name@example.com" required>
-
-							<div class="invalid-feedback">Please enter your Email
-								Address.</div>
-
+                                <div id="alertEmail"></div>
+					 
 							<br>
 						</div>
 
@@ -120,9 +119,7 @@
 							<label for="validationCustom04" class="form-label">Contact
 								Number</label> <input type="text" name="tel" class="form-control"
 								id="valContact" placeholder="Contact Number" required>
-
-							<div class="invalid-feedback">Please enter your Contact
-								Number.</div>
+                                <div id="contactNum"></div>
 
 							<br>
 						</div>
@@ -131,10 +128,7 @@
 							<label for="validationCustom05" class="form-label">Check-In
 								Date</label> <input type="date" name="sdate" class="form-control"
 								id="validationCustom05" placeholder="mm/dd/yyyy" required>
-
-							<div class="invalid-feedback">Please select a Check-In
-								Date.</div>
-
+ 
 							<br>
 						</div>
 
@@ -142,10 +136,7 @@
 							<label for="validationCustom06">Check-Out Date</label> <input
 								type="date" name="edate" class="form-control"
 								id="validationCustom06" placeholder="mm/dd/yyyy" required>
-
-							<div class="invalid-feedback">Please select a Check-Out
-								Date.</div>
-
+ 
 							<br>
 						</div>
 
@@ -153,9 +144,7 @@
 							<label for="validationCustom07">Number of Guests</label> <input
 								type="number" name="numofg" class="form-control"
 								id="validationCustom07" placeholder="Number of Guests" required>
-
-							<div class="invalid-feedback">Please select number of
-								guests.</div>
+ 
 
 						</div>
 						<br> <label><b>Select Your Room</b></label> <br>
@@ -208,7 +197,7 @@
 								<button type="reset" class="btn btn-danger w-100">Reset</button>
 							</div>
 							<div class="col">
-								<button type="submit" class="btn btn-primary w-100" onClick="validate()">Submit</button>
+								<button type="submit" class="btn btn-primary w-100" onClick="roomBookingValidate()">Submit</button>
 							</div>
 						</div>
 						<br> <br>
@@ -294,78 +283,5 @@
 		</div>
 
 	</div>
-
-	<script>
-		//Validation
-		 
-		 
-function validateName()
-{
-	var name = document.getElementById("valFirstName").value;
-	if((name == "") || (name == null))
-	{
-		alert("Please enter your First Name");
-		return false;
-	}
-	return true;
-}
-
-	
-function validate()
-{
-	
-	if(validateName() && validateLastName() && validateEmail() && Contact())
-	{
-		alert("You have registered to the site ");
-	}
-	else
-	{
-		event.preventDefault();
-	}
-	
-}
-	
-function validateLastName()
-{
-	var nickname = document.getElementById("valLastName").value;
-	if((nickname == "")|| (nickname == null))
-	{
-		alert("Please enter your Last Name");
-		return false;
-	}
-	return true;
-	
-}
-	
-function validateEmail()
-{
-		var email = document.getElementById("valEmail").value;
-		var dot = email.lastIndexOf(".");
-		var at = email.indexOf("@");
-		var len = email.length;
-		
-		if((at<1)||(dot-at<2)||(len-dot <3))
-		{
-			alert("Please enter a valid email");
-			return false;
-		}
-		return true;
-}
-	
-function Contact()
-{
-	var contact = document.getElementById("valContact").value;
-	
-	
-	if((contact.length!=10)||(isNaN(contact)))
-	{
-		alert("Please enter a valid contact number");
-		return false;
-	}
-	return true;
-}
-	
-</script>
-
 </body>
 </html>
