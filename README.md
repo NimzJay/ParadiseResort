@@ -20,7 +20,7 @@ Paradise Resort - A Hotel Management web application that provides Hotel Booking
 - XAMPP/WAMP
 - Database Server: PHPMyAdmin
 
-## Deployement Steps
+## Deployment Steps
 
 ### 1. Setting the Environment
 - Install the pre-requisite software listed above.
@@ -32,3 +32,7 @@ Paradise Resort - A Hotel Management web application that provides Hotel Booking
 - In Eclipse, go to Files and import the project to the workspace.
 - Got to project build path and add external libraries located in "WebContent > WEB-INF > lib"
 - Add project to apache server and run the server.
+
+### 3. Importing Database
+- Go to phpMyAdmin sql server and create a database named "paradiseresort".
+- Then import the sql file located in "WebContent > sql > ParadiseResort.sql"
