@@ -7,12 +7,17 @@ Paradise Resort - A Hotel Management web application that provides Hotel Booking
 3. Nimna Jayaweera
 4. Sasmini Alawathugoda
 
-## Pre-Requisite Technologies
+## Technologies
+- Java , JSP , Servlets
+- HTML , CSS , Javascript
+- Bootstrap framework
+- MySQL
+
+## Pre-Requisite 
 - IDE: Eclipse  -  Oxygen R3
 - Java Version: v1.8
 - Tomcat Version: 9.0.32
 - XAMPP/WAMP
-- Database: MySQL
 - Database Server: PHPMyAdmin
 
 ## Deployement Steps
