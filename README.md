@@ -1,5 +1,9 @@
 # ParadiseResort
-Paradise Resort - A Hotel Management web application that provides Hotel Booking services to the client to browse through hotel services and reserve a room or a reception hall. Developed on request of Java Training - HCL Technologies. 
+Paradise Resort - A Hotel Management web application that provides Hotel Booking services to the client to browse through hotel services and reserve a room or a reception hall. Developed on request of Java Training - HCL Technologies.
+
+## Demo
+<img src="ParadiseResort/Demo/index1.png"  width="100%" height="100%" alt="UI Design" title="UI Design">
+<img src="ParadiseResort/Demo/login.png"  width="100%" height="100%" alt="UI Design" title="UI Design">
 
 ## Team
 1. Denuka Weerasinghe
