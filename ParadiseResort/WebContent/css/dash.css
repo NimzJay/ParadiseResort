@@ -1,0 +1,147 @@
+
+body{
+    background: #c0c0c0;
+     font-family: "Calibri Light";
+}
+h2{
+	padding-top:15px;
+	margin:auto;
+	color:#fff;
+}
+hr{
+	color:#fff;
+	height: 10px;
+    width: 100%;
+}
+#logo{
+	margin:auto;
+	display: block;
+    width: 200px;
+    height: 215px;
+    border-radius: 10px;
+    
+}
+
+.profile{
+	margin:auto;
+    text-align: center;
+}
+
+.profile img{
+	
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.profile h3{
+	text-align:center;
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.profile p{
+    color:#fff;
+    font-size: 14px;
+}
+.item,.icon{
+	color:#fff;
+}
+
+.side{
+	height: 100%;
+	margin: 5px 5px;
+	border-radius: 10px;
+	z-index: -1;
+	background-color: #404040;
+	overflow: hidden;
+	box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2), 10px 10px 10px 0 rgba(0, 0, 0, 0.19);
+}
+li{
+	font-weight:bold;
+	overflow: hidden;
+	margin-top:15px;
+}
+li:hover{
+	transition: 1s ease-in-out;
+	background-color:#000;
+	border-radius: 5px;
+	color:#fff;
+}
+.card {
+	overflow: hidden;
+    margin-top: 10px;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2), 10px 10px 10px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.con {
+    padding: 2px 16px;
+  }
+
+.card h4{
+    margin-top: 10px;
+    text-align: center;
+}
+.income {
+	overflow: hidden;
+    background-color: #36abab;
+    height: 800px;
+    color: #fff;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 15px;
+  }
+.income h4,p{
+    margin-top: 10px;
+    text-align: center;
+}
+.income:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.income_con {
+    padding: 2px 16px;
+  }
+
+.card h1{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.view_table{
+    padding: 50px 20px;
+}
+ table{
+ 	 overflow: hidden;
+     width: 100%;
+ }
+
+ table th{
+     background-color:lightsalmon;
+     color: #000;
+     text-align:center;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
+table td{
+     color: #fff;
+     font-weight:bold;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
+ .booking{
+ 	 text-align:center;
+ 	 color: #000000;
+     font-weight:bold;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
